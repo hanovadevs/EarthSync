@@ -52,13 +52,18 @@ const ProductDetail = () => {
         </div>
       </nav>
 
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '40px 24px' }}>
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(20px, 5vw, 40px) 24px' }}>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '60px', marginBottom: '80px' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: window.innerWidth < 1024 ? '1fr' : '1fr 1fr', 
+          gap: 'clamp(30px, 6vw, 60px)', 
+          marginBottom: 'clamp(40px, 8vw, 80px)' 
+        }}>
           
           {/* Gallery */}
-          <div style={{ display: 'flex', gap: '15px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '15px' }}>
+            <div style={{ display: 'flex', flexDirection: window.innerWidth < 640 ? 'row' : 'column', gap: '10px', flexWrap: 'wrap' }}>
               {mediaList.map((item, i) => (
                 <motion.div 
                   key={i}
@@ -66,8 +71,8 @@ const ProductDetail = () => {
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   style={{ 
-                    width: '65px', 
-                    height: '65px', 
+                    width: 'clamp(50px, 10vw, 65px)', 
+                    height: 'clamp(50px, 10vw, 65px)', 
                     borderRadius: '12px', 
                     overflow: 'hidden', 
                     cursor: 'pointer',
@@ -95,7 +100,7 @@ const ProductDetail = () => {
               onMouseMove={handleMouseMove}
               style={{ 
                 flex: 1, 
-                height: '500px', 
+                height: 'clamp(300px, 40vh, 500px)', 
                 borderRadius: '24px', 
                 overflow: 'hidden', 
                 backgroundColor: '#F9F9F9', 
@@ -141,7 +146,7 @@ const ProductDetail = () => {
                   />
                 )}
               </AnimatePresence>
-              {!isZooming && mediaList[activeMedia].type === 'image' && (
+              {!isZooming && mediaList[activeMedia].type === 'image' && window.innerWidth > 768 && (
                 <div style={{ position: 'absolute', bottom: '20px', right: '20px', backgroundColor: 'rgba(255,255,255,0.8)', padding: '8px 12px', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 700, pointerEvents: 'none', border: '1px solid #eee' }}>
                    HOVER TO ZOOM
                 </div>
@@ -159,17 +164,17 @@ const ProductDetail = () => {
             <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#A3B18A', textTransform: 'uppercase', letterSpacing: '0.3em', display: 'block', marginBottom: '15px' }}>
               Clinical Grade Earthing
             </span>
-            <h1 style={{ fontSize: '2.8rem', fontWeight: 900, lineHeight: 1.1, marginBottom: '20px', letterSpacing: '-0.02em', color: '#1A1A1A' }}>
+            <h1 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '15px', letterSpacing: '-0.02em', color: '#1A1A1A' }}>
               {product.title}
             </h1>
-            <p style={{ fontSize: '1.2rem', color: '#666', fontWeight: 300, marginBottom: '35px', lineHeight: 1.6 }}>
+            <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: '#666', fontWeight: 300, marginBottom: '25px', lineHeight: 1.6 }}>
               {product.subtitle}
             </p>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '25px', marginBottom: '40px' }}>
-              <span style={{ fontSize: '2.8rem', fontWeight: 900, color: '#3B5233' }}>{product.price}</span>
-              <div style={{ backgroundColor: '#F0F4EF', padding: '10px 20px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '10px', color: '#3B5233', fontWeight: 800, fontSize: '0.75rem', border: '1px solid #E9EEE8' }}>
-                <ShieldCheck size={18} /> 1-YEAR PERFORMANCE WARRANTY
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, color: '#3B5233' }}>{product.price}</span>
+              <div style={{ backgroundColor: '#F0F4EF', padding: '8px 16px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '10px', color: '#3B5233', fontWeight: 800, fontSize: '0.7rem', border: '1px solid #E9EEE8' }}>
+                <ShieldCheck size={18} /> 1-YEAR WARRANTY
               </div>
             </div>
 
@@ -182,8 +187,8 @@ const ProductDetail = () => {
               whileTap={{ scale: 0.98 }}
               style={{ 
                 width: '100%', 
-                padding: '24px', 
-                fontSize: '1.1rem', 
+                padding: 'clamp(16px, 3vw, 24px)', 
+                fontSize: 'clamp(0.9rem, 2vw, 1.1rem)', 
                 borderRadius: '20px',
                 backgroundColor: '#3B5233',
                 color: 'white'
@@ -192,30 +197,36 @@ const ProductDetail = () => {
               PURCHASE ON AMAZON <ShoppingCart size={22} style={{ marginLeft: '12px' }} />
             </motion.a>
 
-            <div style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
-               <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  <div style={{ backgroundColor: '#F0F4EF', padding: '12px', borderRadius: '12px' }}>
-                    <Zap size={20} color="#3B5233" />
+            <div style={{ marginTop: 'clamp(30px, 6vw, 50px)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(15px, 4vw, 30px)' }}>
+               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <div style={{ backgroundColor: '#F0F4EF', padding: '10px', borderRadius: '10px' }}>
+                    <Zap size={18} color="#3B5233" />
                   </div>
                   <div>
-                    <span style={{ fontWeight: 800, fontSize: '0.8rem', display: 'block', color: '#1A1A1A' }}>Conductivity</span>
-                    <span style={{ fontSize: '0.75rem', color: '#888' }}>10% Silver Matrix</span>
+                    <span style={{ fontWeight: 800, fontSize: '0.75rem', display: 'block', color: '#1A1A1A' }}>Conductivity</span>
+                    <span style={{ fontSize: '0.7rem', color: '#888' }}>10% Silver Matrix</span>
                   </div>
                </div>
-               <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  <div style={{ backgroundColor: '#F0F4EF', padding: '12px', borderRadius: '12px' }}>
-                    <RefreshCw size={20} color="#3B5233" />
+               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                  <div style={{ backgroundColor: '#F0F4EF', padding: '10px', borderRadius: '10px' }}>
+                    <RefreshCw size={18} color="#3B5233" />
                   </div>
                   <div>
-                    <span style={{ fontWeight: 800, fontSize: '0.8rem', display: 'block', color: '#1A1A1A' }}>Material</span>
-                    <span style={{ fontSize: '0.75rem', color: '#888' }}>Organic Cotton Blend</span>
+                    <span style={{ fontWeight: 800, fontSize: '0.75rem', display: 'block', color: '#1A1A1A' }}>Material</span>
+                    <span style={{ fontSize: '0.7rem', color: '#888' }}>Cotton Blend</span>
                   </div>
                </div>
             </div>
           </motion.div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr', gap: '80px', borderTop: '1px solid #eee', paddingTop: '60px' }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: window.innerWidth < 1024 ? '1fr' : '1.8fr 1fr', 
+          gap: 'clamp(40px, 10vw, 80px)', 
+          borderTop: '1px solid #eee', 
+          paddingTop: 'clamp(40px, 8vw, 60px)' 
+        }}>
           <div>
             <section style={{ marginBottom: '60px' }}>
               <h2 style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '20px' }}>Product Overview</h2>

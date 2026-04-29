@@ -93,8 +93,8 @@ const Products = () => {
       </div>
 
       {/* Product Grid */}
-      <section style={{ padding: '80px 24px', maxWidth: '1400px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '30px' }}>
+      <section style={{ padding: 'clamp(40px, 8vw, 80px) clamp(15px, 3vw, 24px)', maxWidth: '1400px', margin: '0 auto' }}>
+        <div className="responsive-grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 'clamp(20px, 3vw, 30px)' }}>
           <AnimatePresence mode="popLayout">
             {filteredProducts.map((product, i) => (
               <motion.div

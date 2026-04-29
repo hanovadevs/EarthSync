@@ -72,23 +72,27 @@ const Research = () => {
       </section>
 
       {/* Clinical Journal Section */}
-      <section style={{ padding: '120px 24px', backgroundColor: '#F6F6F6' }}>
+      <section style={{ padding: 'clamp(60px, 12vw, 120px) 24px', backgroundColor: '#F6F6F6' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 80px)' }}>
             <Microscope size={40} color="#3B5233" style={{ marginBottom: '20px' }} />
-            <h2 style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.02em' }}>Clinical Study Matrix</h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', fontWeight: 300 }}>Peer-reviewed observations on human physiological shifts.</p>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 900, letterSpacing: '-0.02em' }}>Clinical Study Matrix</h2>
+            <p style={{ fontSize: 'clamp(0.9rem, 2vw, 1.1rem)', color: '#666', fontWeight: 300 }}>Peer-reviewed observations on human physiological shifts.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 30vw, 350px), 1fr))', 
+            gap: 'clamp(20px, 4vw, 40px)' 
+          }}>
             {/* Study 1: Cortisol */}
-            <motion.div {...fadeIn} style={{ backgroundColor: 'white', padding: '45px', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }}>
+            <motion.div {...fadeIn} style={{ backgroundColor: 'white', padding: 'clamp(25px, 5vw, 45px)', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '30px' }}>
                 <div style={{ backgroundColor: '#EEF2ED', padding: '12px', borderRadius: '15px', color: '#3B5233' }}><Activity size={24} /></div>
                 <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#A3B18A', letterSpacing: '0.1em' }}>HORMONE REGULATION</span>
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '20px' }}>Circadian Cortisol Alignment</h3>
-              <p style={{ fontSize: '1rem', color: '#666', lineHeight: 1.7, marginBottom: '25px' }}>
+              <h3 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.6rem)', fontWeight: 800, marginBottom: '20px' }}>Circadian Cortisol Alignment</h3>
+              <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.7, marginBottom: '25px' }}>
                 Subjects who slept grounded over an 8-week period showed a significant normalization of their diurnal cortisol secretion patterns. Baseline profiles that were previously erratic became synchronized with the 24-hour natural cycle.
               </p>
               <div style={{ borderTop: '1px solid #eee', paddingTop: '20px' }}>
@@ -98,13 +102,13 @@ const Research = () => {
             </motion.div>
 
             {/* Study 2: Zeta Potential */}
-            <motion.div {...fadeIn} style={{ backgroundColor: 'white', padding: '45px', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }}>
+            <motion.div {...fadeIn} style={{ backgroundColor: 'white', padding: 'clamp(25px, 5vw, 45px)', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '30px' }}>
                 <div style={{ backgroundColor: '#EEF2ED', padding: '12px', borderRadius: '15px', color: '#3B5233' }}><Zap size={24} /></div>
                 <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#A3B18A', letterSpacing: '0.1em' }}>ELECTRODYNAMICS</span>
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '20px' }}>Red Blood Cell Viscosity</h3>
-              <p style={{ fontSize: '1rem', color: '#666', lineHeight: 1.7, marginBottom: '25px' }}>
+              <h3 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.6rem)', fontWeight: 800, marginBottom: '20px' }}>Red Blood Cell Viscosity</h3>
+              <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.7, marginBottom: '25px' }}>
                 Grounding increases the surface charge on RBCs (Zeta Potential), which increases the spacing between cells. This natural "thinning" of the blood significantly improves cardiovascular efficiency and systemic oxygenation.
               </p>
               <div style={{ borderTop: '1px solid #eee', paddingTop: '20px' }}>
@@ -114,13 +118,13 @@ const Research = () => {
             </motion.div>
 
             {/* Study 3: DOMS */}
-            <motion.div {...fadeIn} style={{ backgroundColor: 'white', padding: '45px', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }}>
+            <motion.div {...fadeIn} style={{ backgroundColor: 'white', padding: 'clamp(25px, 5vw, 45px)', borderRadius: '32px', boxShadow: '0 20px 50px rgba(0,0,0,0.03)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '30px' }}>
                 <div style={{ backgroundColor: '#EEF2ED', padding: '12px', borderRadius: '15px', color: '#3B5233' }}><Beaker size={24} /></div>
                 <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#A3B18A', letterSpacing: '0.1em' }}>RECOVERY SCIENCE</span>
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '20px' }}>Muscle Inflammation (DOMS)</h3>
-              <p style={{ fontSize: '1rem', color: '#666', lineHeight: 1.7, marginBottom: '25px' }}>
+              <h3 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.6rem)', fontWeight: 800, marginBottom: '20px' }}>Muscle Inflammation (DOMS)</h3>
+              <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.7, marginBottom: '25px' }}>
                 In studies involving eccentric exercise, grounded subjects showed significantly lower white blood cell counts and reduced pain levels. Grounding prevents the 'collateral damage' caused by the immune system during repair.
               </p>
               <div style={{ borderTop: '1px solid #eee', paddingTop: '20px' }}>

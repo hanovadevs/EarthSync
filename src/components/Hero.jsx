@@ -118,19 +118,20 @@ const Hero = () => {
             backgroundColor: navBg, 
             backdropFilter: navBlur, 
             color: navTextColor,
-            padding: '20px 60px'
+            padding: 'clamp(10px, 2vw, 20px) clamp(20px, 5vw, 60px)',
+            transition: 'all 0.5s ease'
           }}
           className="navbar"
         >
-          <a href="/" className="nav-logo" style={{ color: 'inherit', display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <a href="/" className="nav-logo" style={{ color: 'inherit', display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 20px)' }}>
             <motion.img 
-              style={{ filter: logoFilter, height: '60px', width: 'auto' }}
+              style={{ filter: logoFilter, height: 'clamp(35px, 5vw, 60px)', width: 'auto' }}
               src="/assets/Logo (1).png" 
               alt="Logo" 
             />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
-              <span style={{ fontWeight: 800, fontSize: '1rem', letterSpacing: '0.1em' }}>EARTHSYNC</span>
-              <span style={{ fontWeight: 400, fontSize: '0.6rem', letterSpacing: '0.4em', opacity: 0.8, marginTop: '4px' }}>ESSENTIALS</span>
+              <span style={{ fontWeight: 800, fontSize: 'clamp(0.7rem, 1.5vw, 1rem)', letterSpacing: '0.1em' }}>EARTHSYNC</span>
+              <span style={{ fontWeight: 400, fontSize: 'clamp(0.4rem, 1vw, 0.6rem)', letterSpacing: '0.4em', opacity: 0.8, marginTop: '4px' }}>ESSENTIALS</span>
             </div>
           </a>
           <div className="nav-links">
@@ -140,13 +141,13 @@ const Hero = () => {
             <Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About</Link>
             <Link to="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</Link>
           </div>
-          <Link to="/products" className="btn btn-primary" style={{ padding: '12px 32px', fontSize: '0.75rem', textDecoration: 'none', display: 'inline-block' }}>
-            Shop
+          <Link to="/products" className="btn btn-primary" style={{ padding: 'clamp(8px, 1.5vw, 12px) clamp(15px, 3vw, 32px)', fontSize: '0.7rem', textDecoration: 'none' }}>
+            SHOP
           </Link>
         </motion.nav>
 
         {/* Hero Content with Staggered Entrance */}
-        <div className="hero-content" style={{ paddingTop: '100px' }}>
+        <div className="hero-content" style={{ paddingTop: 'clamp(80px, 12vh, 120px)', paddingLeft: '24px', paddingRight: '24px' }}>
           <div style={{ overflow: 'hidden', marginBottom: '15px' }}>
             <motion.span 
               initial={{ y: '100%' }}
@@ -156,14 +157,14 @@ const Hero = () => {
               style={{ 
                 marginBottom: 0, 
                 textShadow: '0 2px 10px rgba(0,0,0,0.3)',
-                fontSize: '0.75rem'
+                fontSize: 'clamp(0.6rem, 1.5vw, 0.75rem)'
               }}
             >
               The Science of Better Sleep
             </motion.span>
           </div>
           
-          <div style={{ overflow: 'hidden', marginBottom: '30px' }}>
+          <div style={{ overflow: 'hidden', marginBottom: 'clamp(15px, 4vw, 30px)' }}>
             <motion.h1 
               initial={{ y: '100%' }}
               animate={!isLoading ? { y: 0 } : {}}
@@ -172,7 +173,7 @@ const Hero = () => {
               style={{ 
                 marginBottom: 0,
                 textShadow: '0 10px 30px rgba(0,0,0,0.4)',
-                fontSize: 'clamp(2.5rem, 8vw, 5.5rem)',
+                fontSize: 'clamp(2.2rem, 9vw, 5.5rem)',
                 lineHeight: '1.1'
               }}
             >
@@ -193,9 +194,9 @@ const Hero = () => {
             className="hero-subtitle"
             style={{ 
               maxWidth: '600px', 
-              margin: '0 auto 50px',
+              margin: '0 auto clamp(25px, 5vw, 50px)',
               textShadow: '0 2px 10px rgba(0,0,0,0.3)',
-              fontSize: '1.2rem',
+              fontSize: 'clamp(0.9rem, 2.5vw, 1.2rem)',
               lineHeight: '1.6',
               fontWeight: 300,
               opacity: 0.9
@@ -208,14 +209,20 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={!isLoading ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 2.2 }}
-            style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}
+            style={{ 
+              display: 'flex', 
+              gap: 'clamp(10px, 2vw, 20px)', 
+              justifyContent: 'center',
+              flexWrap: 'wrap'
+            }}
           >
-            <Link to="/products" className="btn btn-primary" style={{ textDecoration: 'none' }}>
+            <Link to="/products" className="btn btn-primary" style={{ textDecoration: 'none', padding: 'clamp(14px, 2vw, 18px) clamp(30px, 4vw, 44px)' }}>
               <Link2 size={18} style={{ marginRight: '8px' }} /> EXPLORE COLLECTION
             </Link>
             <button 
               className="btn btn-outline" 
               onClick={() => setShowVideo(true)}
+              style={{ padding: 'clamp(14px, 2vw, 18px) clamp(30px, 4vw, 44px)' }}
             >
               <Play size={18} style={{ marginRight: '8px' }} /> WATCH FILM
             </button>
