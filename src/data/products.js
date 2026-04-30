@@ -113,7 +113,7 @@ export const productsData = [
     category: "Sheets",
     amazonLink: "https://www.amazon.com/dp/B0GFBCKYCQ/ref=twister_B0FWKG2P9Y?th=1",
     mainImage: "https://m.media-amazon.com/images/I/71xpHSxWbWL._AC_SX679_.jpg",
-    video: "/assets/Grounding Sheets white with text.mp4",
+    video: "/assets/grounding-sheets-white-with-text.mp4",
     images: [
       "https://m.media-amazon.com/images/I/71xpHSxWbWL._AC_SX679_.jpg",
       "https://m.media-amazon.com/images/I/717myJD7ISL._AC_SX679_.jpg",
@@ -167,7 +167,7 @@ export const productsData = [
     category: "Sheets",
     amazonLink: "https://www.amazon.com/dp/B0FMF8PH28/ref=twister_B0FWKG2P9Y?th=1",
     mainImage: "https://m.media-amazon.com/images/I/717myJD7ISL._AC_SX679_.jpg",
-    video: "/assets/Grounding Sheets grey with text.mp4",
+    video: "/assets/grounding-sheets-grey-with-text.mp4",
     images: [
       "https://m.media-amazon.com/images/I/717myJD7ISL._AC_SX679_.jpg",
       "https://m.media-amazon.com/images/I/71xpHSxWbWL._AC_SX679_.jpg",

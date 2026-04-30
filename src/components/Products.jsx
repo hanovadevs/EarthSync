@@ -25,7 +25,7 @@ const Products = () => {
         
         {/* Video Background */}
         <video 
-          src="/assets/Grounding Sheet Both Colors.mp4" 
+          src="/assets/grounding-sheet-both-colors.mp4" 
           autoPlay 
           muted 
           loop 

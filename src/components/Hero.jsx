@@ -63,7 +63,7 @@ const Hero = () => {
                   opacity: [0.5, 1, 0.5]
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                src="/assets/Logo (1).png" 
+                src="/assets/logo-1.png" 
                 alt="Logo" 
                 style={{ height: '80px', filter: 'brightness(0) invert(1)' }} 
               />
@@ -126,7 +126,7 @@ const Hero = () => {
           <a href="/" className="nav-logo" style={{ color: 'inherit', display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 20px)' }}>
             <motion.img 
               style={{ filter: logoFilter, height: 'clamp(35px, 5vw, 60px)', width: 'auto' }}
-              src="/assets/Logo (1).png" 
+              src="/assets/logo-1.png" 
               alt="Logo" 
             />
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
@@ -302,9 +302,11 @@ const Hero = () => {
                   <X size={20} />
                 </button>
                 <video 
-                  src="/assets/Grounding Sheet Both Colors.mp4" 
+                  src="/assets/grounding-sheet-both-colors.mp4" 
                   controls 
                   autoPlay 
+                  muted
+                  playsInline
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </motion.div>

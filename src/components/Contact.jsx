@@ -57,7 +57,7 @@ const Contact = () => {
           transition={{ duration: 2 }}
           style={{ position: 'absolute', inset: 0 }}
         >
-          <img src="/assets/Banner 5.jpg" alt="Contact EarthSync" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="/assets/banner-5.jpg" alt="Contact EarthSync" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.4), #FDFDFD)' }} />
         </motion.div>
 
@@ -195,7 +195,7 @@ const Contact = () => {
 
       {/* Footer Copy */}
       <footer style={{ padding: '80px 24px', borderTop: '1px solid #eee', textAlign: 'center' }}>
-        <img src="/assets/Logo (1).png" alt="EarthSync" style={{ height: '40px', marginBottom: '20px', opacity: 0.5 }} />
+        <img src="/assets/logo-1.png" alt="EarthSync" style={{ height: '40px', marginBottom: '20px', opacity: 0.5 }} />
         <p style={{ fontSize: '0.8rem', opacity: 0.4 }}>© 2026 EarthSync Essentials. All rights reserved.</p>
       </footer>
 

@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div style={{ gridColumn: 'span 2' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-              <img src="/assets/Logo (1).png" alt="EarthSync Logo" style={{ height: '35px', width: 'auto' }} />
+              <img src="/assets/logo-1.png" alt="EarthSync Logo" style={{ height: '35px', width: 'auto' }} />
               <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
                 <span style={{ fontWeight: 900, fontSize: '1.1rem', letterSpacing: '0.1em', color: '#3B5233' }}>EARTHSYNC</span>
                 <span style={{ fontWeight: 400, fontSize: '0.6rem', letterSpacing: '0.4em', color: '#3B5233', opacity: 0.8, marginTop: '3px' }}>ESSENTIALS</span>

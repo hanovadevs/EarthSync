@@ -124,6 +124,7 @@ const ProductDetail = () => {
                       autoPlay 
                       muted
                       loop
+                      playsInline
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   </motion.div>
@@ -285,7 +286,7 @@ const ProductDetail = () => {
       </main>
 
       <footer style={{ padding: '80px 24px', backgroundColor: '#F9F9F9', textAlign: 'center' }}>
-          <img src="/assets/Logo (1).png" alt="Logo" style={{ height: '35px', marginBottom: '25px' }} />
+          <img src="/assets/logo-1.png" alt="Logo" style={{ height: '35px', marginBottom: '25px' }} />
           <p style={{ color: '#999', fontSize: '0.7rem', letterSpacing: '0.2em' }}>EARTHSYNC ESSENTIALS — DESIGNED IN THE USA</p>
       </footer>
     </div>

@@ -62,7 +62,7 @@ const Science = () => {
           transition={{ duration: 3 }}
           style={{ position: 'absolute', inset: 0, zIndex: 0 }}
         >
-          <img src="/assets/Image 3.jpg" alt="Science Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="/assets/image-3.jpg" alt="Science Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.2) 60%, #FDFDFD)' }} />
         </motion.div>
 
@@ -201,7 +201,7 @@ const Science = () => {
               transition={{ duration: 1 }}
               style={{ position: 'relative', borderRadius: '40px', overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }}
             >
-              <img src="/assets/Image 7.jpg" alt="Conductive Silver Fiber" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src="/assets/image-7.jpg" alt="Conductive Silver Fiber" style={{ width: '100%', height: 'auto', display: 'block' }} />
               <div style={{ position: 'absolute', bottom: '30px', left: '30px', backgroundColor: 'rgba(255,255,255,0.9)', padding: '20px', borderRadius: '20px', backdropFilter: 'blur(10px)' }}>
                 <span style={{ fontSize: '0.7rem', fontWeight: 800, display: 'block', color: '#3B5233' }}>MAGNIFICATION: 100X</span>
                 <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Pure Silver Thread Matrix</span>
@@ -238,7 +238,7 @@ const Science = () => {
       {/* Footer Persistence */}
       <div style={{ borderTop: '1px solid #eee' }}>
          <footer style={{ padding: '120px 24px', backgroundColor: '#1A1A1A', color: 'white', textAlign: 'center' }}>
-            <img src="/assets/Logo (1).png" alt="Logo" style={{ height: '40px', marginBottom: '30px', filter: 'brightness(0) invert(1)' }} />
+            <img src="/assets/logo-1.png" alt="Logo" style={{ height: '40px', marginBottom: '30px', filter: 'brightness(0) invert(1)' }} />
             <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '30px', letterSpacing: '-0.02em' }}>Ready to Experience the Science?</h3>
             <Link to="/products" className="btn btn-primary" style={{ textDecoration: 'none', padding: '20px 50px' }}>Shop the Collection</Link>
             <div style={{ marginTop: '100px', opacity: 0.3, fontSize: '0.8rem', letterSpacing: '0.2em' }}>

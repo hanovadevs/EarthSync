@@ -18,7 +18,7 @@ const Explanation = () => {
               style={{ borderRadius: '40px', overflow: 'hidden', boxShadow: '0 50px 100px rgba(0,0,0,0.1)' }}
             >
               <img 
-                src="/assets/Image 5.jpg" 
+                src="/assets/image-5.jpg" 
                 alt="The Science of Grounding" 
                 style={{ width: '100%', height: 'auto', display: 'block', transform: 'scale(1.1)' }}
               />

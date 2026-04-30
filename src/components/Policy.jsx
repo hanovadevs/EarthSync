@@ -181,7 +181,7 @@ const Policy = () => {
 
       {/* Final CTA Footer Link */}
       <section style={{ padding: '100px 24px', textAlign: 'center', backgroundColor: '#FDFDFD', color: '#1A1A1A', borderTop: '1px solid #eee' }}>
-        <img src="/assets/Logo (1).png" alt="EarthSync" style={{ height: '40px', marginBottom: '30px', opacity: 0.5 }} />
+        <img src="/assets/logo-1.png" alt="EarthSync" style={{ height: '40px', marginBottom: '30px', opacity: 0.5 }} />
         <p style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.4em', color: '#3B5233' }}>STAY GROUNDED.</p>
       </section>
 

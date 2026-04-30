@@ -33,7 +33,7 @@ const About = () => {
           transition={{ duration: 3 }}
           style={{ position: 'absolute', inset: 0 }}
         >
-          <img src="/assets/Banner 5.jpg" alt="About EarthSync" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="/assets/banner-5.jpg" alt="About EarthSync" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.8), transparent)' }} />
         </motion.div>
 
@@ -104,7 +104,7 @@ const About = () => {
             viewport={{ once: true }}
             style={{ borderRadius: '40px', overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }}
           >
-            <img src="/assets/Image 1.jpg" alt="Nature Connection" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src="/assets/image-1.jpg" alt="Nature Connection" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </motion.div>
         </div>
       </section>
