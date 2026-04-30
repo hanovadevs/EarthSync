@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Twitter, Linkedin, Send, ArrowLeft, MapPin } from 'lucide-react';
+import { Mail, Phone, Instagram, Twitter, Linkedin, Send, ArrowLeft, MapPin, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
 import FAQ from './FAQ';
 
 const contactFAQs = [
@@ -20,9 +20,52 @@ const contactFAQs = [
 ];
 
 const Contact = () => {
+  const formRef = useRef();
+  const [status, setStatus] = useState('idle'); // idle, sending, success, error
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    type: 'Product Question',
+    message: ''
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      // FORMSPREE ENDPOINT
+      // You can replace 'your_id' with your actual Formspree ID
+      // or just use your email if you've already verified it with Formspree
+      const FORMSPREE_ENDPOINT = "https://formspree.io/f/service@earthsyncessentials.com";
+
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', type: 'Product Question', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
 
   const inputStyle = {
     width: '100%',
@@ -115,7 +158,7 @@ const Contact = () => {
               </div>
               <div>
                 <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700 }}>Visit us</span>
-                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>2360 lakewood right, Tom's river nj 08755</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>2360 lakewood road, Toms river nj 08755</span>
               </div>
             </div>
 
@@ -142,50 +185,139 @@ const Contact = () => {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            style={{ backgroundColor: 'white', padding: '60px', borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.05)' }}
+            style={{ 
+              backgroundColor: 'white', 
+              padding: '60px', 
+              borderRadius: '40px', 
+              boxShadow: '0 40px 80px rgba(0,0,0,0.05)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
           >
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              <div style={{ position: 'relative' }}>
-                <input type="text" placeholder="Full Name" style={inputStyle} />
-              </div>
-              <div style={{ position: 'relative' }}>
-                <input type="email" placeholder="Email Address" style={inputStyle} />
-              </div>
-              <div style={{ position: 'relative' }}>
-                <select style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}>
-                  <option>Inquiry Type</option>
-                  <option>Product Question</option>
-                  <option>Order Status</option>
-                  <option>Partnership</option>
-                </select>
-              </div>
-              <div style={{ position: 'relative' }}>
-                <textarea placeholder="How can we help?" rows="4" style={{ ...inputStyle, resize: 'none' }}></textarea>
-              </div>
+            <AnimatePresence mode="wait">
+              {status === 'success' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.1 }}
+                  style={{ textAlign: 'center', padding: '40px 0' }}
+                >
+                  <div style={{ width: '100px', height: '100px', backgroundColor: '#E9EDE7', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 40px' }}>
+                    <CheckCircle2 size={50} color="#3B5233" />
+                  </div>
+                  <h3 style={{ fontSize: '2rem', fontWeight: 900, marginBottom: '20px' }}>Message Received.</h3>
+                  <p style={{ color: '#666', fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '40px' }}>
+                    Our rest experts have been notified. <br /> Expect a synchronization within 24 hours.
+                  </p>
+                  <button 
+                    onClick={() => setStatus('idle')}
+                    style={{ 
+                      backgroundColor: '#3B5233', 
+                      color: 'white', 
+                      border: 'none', 
+                      padding: '18px 40px', 
+                      borderRadius: '100px', 
+                      fontWeight: 700, 
+                      cursor: 'pointer' 
+                    }}
+                  >
+                    Send Another Message
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.form 
+                  key="form"
+                  ref={formRef}
+                  onSubmit={handleSubmit}
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}
+                >
+                  <div style={{ position: 'relative' }}>
+                    <input 
+                      type="text" 
+                      name="name"
+                      placeholder="Full Name" 
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      style={inputStyle} 
+                    />
+                  </div>
+                  <div style={{ position: 'relative' }}>
+                    <input 
+                      type="email" 
+                      name="email"
+                      placeholder="Email Address" 
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      style={inputStyle} 
+                    />
+                  </div>
+                  <div style={{ position: 'relative' }}>
+                    <select 
+                      name="type"
+                      value={formData.type}
+                      onChange={handleChange}
+                      style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
+                    >
+                      <option>Product Question</option>
+                      <option>Order Status</option>
+                      <option>Partnership</option>
+                      <option>General Inquiry</option>
+                    </select>
+                  </div>
+                  <div style={{ position: 'relative' }}>
+                    <textarea 
+                      name="message"
+                      placeholder="How can we help?" 
+                      rows="4" 
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      style={{ ...inputStyle, resize: 'none' }}
+                    ></textarea>
+                  </div>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                style={{
-                  backgroundColor: '#3B5233',
-                  color: 'white',
-                  border: 'none',
-                  padding: '24px',
-                  borderRadius: '100px',
-                  fontSize: '1rem',
-                  fontWeight: 700,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '15px',
-                  cursor: 'pointer',
-                  marginTop: '20px',
-                  boxShadow: '0 20px 40px rgba(59, 82, 51, 0.2)'
-                }}
-              >
-                Send Message <Send size={18} />
-              </motion.button>
-            </form>
+                  {status === 'error' && (
+                    <div style={{ color: '#D64545', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', fontWeight: 600 }}>
+                      <AlertCircle size={18} /> Something went wrong. Please try again.
+                    </div>
+                  )}
+
+                  <motion.button
+                    disabled={status === 'sending'}
+                    whileHover={{ scale: status === 'sending' ? 1 : 1.02 }}
+                    whileTap={{ scale: status === 'sending' ? 1 : 0.98 }}
+                    style={{
+                      backgroundColor: status === 'sending' ? '#E9EDE7' : '#3B5233',
+                      color: status === 'sending' ? '#3B5233' : 'white',
+                      border: 'none',
+                      padding: '24px',
+                      borderRadius: '100px',
+                      fontSize: '1rem',
+                      fontWeight: 700,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '15px',
+                      cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+                      marginTop: '20px',
+                      boxShadow: status === 'sending' ? 'none' : '0 20px 40px rgba(59, 82, 51, 0.2)',
+                      transition: 'all 0.3s ease'
+                    }}
+                  >
+                    {status === 'sending' ? (
+                      <>Processing <Loader2 size={18} className="animate-spin" /></>
+                    ) : (
+                      <>Send Message <Send size={18} /></>
+                    )}
+                  </motion.button>
+                </motion.form>
+              )}
+            </AnimatePresence>
           </motion.div>
 
         </div>
@@ -206,8 +338,15 @@ const Contact = () => {
           color: white !important;
           transform: scale(1.1);
         }
-        input:focus {
+        input:focus, textarea:focus {
           border-bottom-color: #3B5233 !important;
+        }
+        .animate-spin {
+          animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
       `}} />
     </div>
