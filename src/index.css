@@ -352,3 +352,139 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ==========================================================
+   ULTIMATE MOBILE RESPONSIVENESS OVERRIDES
+   Ensures the entire site scales down beautifully 
+   without touching desktop inline styles.
+========================================================== */
+@media (max-width: 768px) {
+  /* Scale down base font size further to shrink em/rem based sizes */
+  html {
+    font-size: 13px !important;
+  }
+
+  :root {
+    --content-padding: 16px;
+  }
+
+  /* Force single column for all complex inline grid definitions */
+  [style*="grid-template-columns: repeat(auto-fit"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: 1.5fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns: minmax"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Override excessive gaps between elements on mobile */
+  [style*="gap: 100px"], [style*="gap: 80px"], [style*="gap: 60px"],
+  [style*="gap:100px"], [style*="gap:80px"], [style*="gap:60px"] {
+    gap: 30px !important;
+  }
+
+  /* Override excessive bottom margins */
+  [style*="margin-bottom: 160px"], [style*="margin-bottom: 150px"],
+  [style*="margin-bottom: 120px"], [style*="margin-bottom: 100px"],
+  [style*="margin-bottom: 80px"], [style*="marginBottom: 160px"],
+  [style*="margin-bottom:160px"], [style*="margin-bottom:120px"],
+  [style*="margin-bottom:100px"], [style*="margin-bottom:80px"] {
+    margin-bottom: 50px !important;
+  }
+  
+  /* Shrink huge padding in sections */
+  section, 
+  [style*="padding: 150px"], [style*="padding: 120px"], [style*="padding: 100px"],
+  [style*="padding:150px"], [style*="padding:120px"], [style*="padding:100px"] {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Header adjustments to prevent excessive height on mobile */
+  header {
+    height: auto !important;
+    min-height: 60vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Typography limits to ensure no breaking/overflowing on small screens */
+  h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 20px !important;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 8vw, 2.2rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+  }
+
+  h3 {
+    font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
+    margin-bottom: 15px !important;
+  }
+
+  p {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Make sure images stay within bounds */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Mobile specific adjustments to fixed elements */
+  .navbar {
+    padding: 15px 20px !important;
+  }
+
+  .nav-logo img {
+    height: 30px !important;
+  }
+
+  /* Card paddings and internal spacings */
+  [style*="padding: 50px"], [style*="padding: 40px"], [style*="padding: 35px"],
+  [style*="padding:50px"], [style*="padding:40px"], [style*="padding:35px"] {
+    padding: 24px !important;
+  }
+
+  /* Buttons on mobile - make them touch-friendly */
+  .btn {
+    padding: 14px 24px !important;
+    font-size: 0.8rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+  }
+
+  /* Prevent flip cards from being un-usable on mobile or overflowing */
+  [style*="perspective: 2000px"], [style*="perspective:2000px"] {
+    height: auto !important;
+    min-height: 500px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px !important;
+  }
+  
+  h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem) !important;
+  }
+
+  .btn {
+    font-size: 0.75rem !important;
+    padding: 12px 20px !important;
+  }
+}
