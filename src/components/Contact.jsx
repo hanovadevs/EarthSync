@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Instagram, Twitter, Linkedin, Send, ArrowLeft } from 'lucide-react';
+import { Mail, Phone, Instagram, Twitter, Linkedin, Send, ArrowLeft, MapPin } from 'lucide-react';
 import FAQ from './FAQ';
 
 const contactFAQs = [
@@ -89,25 +89,35 @@ const Contact = () => {
             <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#3B5233', display: 'block', marginBottom: '30px' }}>Contact Details</span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '60px', lineHeight: 1.1 }}>Reach out to our <br /> rest experts.</h2>
 
-            <a href="mailto:hello@earthsync.com" style={contactItemStyle} className="contact-hover">
+            <a href="mailto:service@earthsyncessentials.com" style={contactItemStyle} className="contact-hover">
               <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#E9EDE7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Mail size={24} />
               </div>
               <div>
                 <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700 }}>Email us</span>
-                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>hello@earthsync.com</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>service@earthsyncessentials.com</span>
               </div>
             </a>
 
-            <a href="tel:+1234567890" style={contactItemStyle} className="contact-hover">
+            <a href="tel:+19085732722" style={contactItemStyle} className="contact-hover">
               <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#E9EDE7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Phone size={24} />
               </div>
               <div>
                 <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700 }}>Call us</span>
-                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>+1 (800) SYNC-BED</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>+1 9085732722</span>
               </div>
             </a>
+
+            <div style={contactItemStyle} className="contact-hover">
+              <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#E9EDE7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <MapPin size={24} />
+              </div>
+              <div>
+                <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700 }}>Visit us</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>2360 lakewood right, Tom's river nj 08755</span>
+              </div>
+            </div>
 
             <div style={{ marginTop: '80px' }}>
               <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700, marginBottom: '20px' }}>Follow our journey</span>
