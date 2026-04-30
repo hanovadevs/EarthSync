@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Lenis from 'lenis'
+import { Analytics } from '@vercel/analytics/react'
 import Hero from './components/Hero'
 import Explanation from './components/Explanation'
 import Benefits from './components/Benefits'
@@ -114,6 +115,7 @@ function App() {
         </Routes>
         <Footer />
         <ChatBot />
+        <Analytics />
       </main>
     </Router>
   )
