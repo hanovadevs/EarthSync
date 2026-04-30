@@ -37,20 +37,10 @@ const ProductDetail = () => {
 
   return (
     <div style={{ backgroundColor: '#FDFDFD', minHeight: '100vh', color: '#1A1A1A' }}>
-      
-      {/* Navigation Header */}
-      <nav style={{ padding: '20px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #eee', backgroundColor: 'white' }}>
-        <Link to="/products" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', color: '#3B5233', fontWeight: 700, fontSize: '0.8rem' }}>
-          <ArrowLeft size={16} /> COLLECTION
-        </Link>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.75rem', color: '#999', fontWeight: 600 }}>
-          <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>HOME</Link>
-          <ChevronRight size={12} />
-          <Link to="/products" style={{ color: 'inherit', textDecoration: 'none' }}>PRODUCTS</Link>
-          <ChevronRight size={12} />
-          <span style={{ color: '#1A1A1A' }}>{product.title.split(' ')[2]}</span>
-        </div>
-      </nav>
+
+      {/* Spacer for fixed navbar */}
+      <div style={{ height: '90px' }} />
+
 
       <main style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(20px, 5vw, 40px) 24px' }}>
         

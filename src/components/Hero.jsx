@@ -20,12 +20,6 @@ const Hero = () => {
     }
   }, [isLoading]);
 
-  // Navbar transitions based on scroll
-  const navBg = useTransform(scrollY, [0, 100], ["rgba(0, 0, 0, 0)", "rgba(255, 255, 255, 0.9)"]);
-  const navBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(20px)"]);
-  const navTextColor = useTransform(scrollY, [0, 100], ["#FFFFFF", "#1A1A1A"]);
-  const logoFilter = useTransform(scrollY, [0, 100], ["brightness(0) invert(1)", "brightness(1) invert(0)"]);
-  
   const bgScale = useTransform(scrollY, [0, 1000], [1, 1.2]);
 
   return (
@@ -109,42 +103,8 @@ const Hero = () => {
           <div className="hero-overlay" />
         </motion.div>
 
-        {/* Navigation */}
-        <motion.nav 
-          initial={{ y: -100, opacity: 0 }}
-          animate={!isLoading ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 1, ease: "easeOut", delay: 1.2 }}
-          style={{ 
-            backgroundColor: navBg, 
-            backdropFilter: navBlur, 
-            color: navTextColor,
-            padding: 'clamp(10px, 2vw, 20px) clamp(20px, 5vw, 60px)',
-            transition: 'all 0.5s ease'
-          }}
-          className="navbar"
-        >
-          <a href="/" className="nav-logo" style={{ color: 'inherit', display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 20px)' }}>
-            <motion.img 
-              style={{ filter: logoFilter, height: 'clamp(35px, 5vw, 60px)', width: 'auto' }}
-              src="/assets/logo-1.png" 
-              alt="Logo" 
-            />
-            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
-              <span style={{ fontWeight: 800, fontSize: 'clamp(0.7rem, 1.5vw, 1rem)', letterSpacing: '0.1em' }}>EARTHSYNC</span>
-              <span style={{ fontWeight: 400, fontSize: 'clamp(0.4rem, 1vw, 0.6rem)', letterSpacing: '0.4em', opacity: 0.8, marginTop: '4px' }}>ESSENTIALS</span>
-            </div>
-          </a>
-          <div className="nav-links">
-            <Link to="/products" style={{ color: 'inherit', textDecoration: 'none' }}>Products</Link>
-            <Link to="/science" style={{ color: 'inherit', textDecoration: 'none' }}>Science</Link>
-            <Link to="/research" style={{ color: 'inherit', textDecoration: 'none' }}>Research</Link>
-            <Link to="/about" style={{ color: 'inherit', textDecoration: 'none' }}>About</Link>
-            <Link to="/contact" style={{ color: 'inherit', textDecoration: 'none' }}>Contact</Link>
-          </div>
-          <Link to="/products" className="btn btn-primary" style={{ padding: 'clamp(8px, 1.5vw, 12px) clamp(15px, 3vw, 32px)', fontSize: '0.7rem', textDecoration: 'none' }}>
-            SHOP
-          </Link>
-        </motion.nav>
+
+
 
         {/* Hero Content with Staggered Entrance */}
         <div className="hero-content" style={{ paddingTop: 'clamp(80px, 12vh, 120px)', paddingLeft: '24px', paddingRight: '24px' }}>

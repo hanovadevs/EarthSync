@@ -37,9 +37,6 @@ const Products = () => {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3) 60%, #FDFDFD)', zIndex: 1 }} />
 
         <div style={{ position: 'relative', zIndex: 10, padding: '0 24px' }}>
-          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'white', textDecoration: 'none', marginBottom: '25px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.8 }}>
-            <ArrowLeft size={12} /> Back to Home
-          </Link>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

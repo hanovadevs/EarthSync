@@ -26,9 +26,6 @@ const Research = () => {
         </div>
 
         <div style={{ position: 'relative', zIndex: 10, padding: '0 24px', maxWidth: '1000px' }}>
-          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'white', textDecoration: 'none', marginBottom: '30px', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-            <ArrowLeft size={16} /> Home
-          </Link>
           <motion.h1 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

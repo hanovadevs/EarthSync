@@ -110,9 +110,6 @@ const Contact = () => {
         </motion.div>
 
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
-          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'white', textDecoration: 'none', marginBottom: '30px', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-            <ArrowLeft size={16} /> Return Home
-          </Link>
           <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

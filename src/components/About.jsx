@@ -38,9 +38,6 @@ const About = () => {
         </motion.div>
 
         <div style={{ position: 'relative', zIndex: 10, padding: '0 8%', maxWidth: '800px', color: 'white' }}>
-          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#A3B18A', textDecoration: 'none', marginBottom: '30px', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-            <ArrowLeft size={16} /> Return Home
-          </Link>
           <motion.span 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}

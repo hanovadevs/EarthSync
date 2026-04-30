@@ -71,26 +71,7 @@ const Policy = () => {
 
   return (
     <div style={{ backgroundColor: '#1A1A1A' }}>
-      
-      {/* Header / Back Link */}
-      <div style={{ position: 'fixed', top: '40px', left: '40px', zIndex: 100 }}>
-        <Link to="/" style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          gap: '10px', 
-          color: 'white', 
-          textDecoration: 'none', 
-          fontWeight: 700, 
-          fontSize: '0.8rem', 
-          backgroundColor: 'rgba(0,0,0,0.3)', 
-          padding: '12px 24px', 
-          borderRadius: '100px', 
-          backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255,255,255,0.1)'
-        }}>
-          <ArrowLeft size={16} /> RETURN HOME
-        </Link>
-      </div>
+
 
       {/* 1. Shipping Policy */}
       <PolicySection 

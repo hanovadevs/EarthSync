@@ -67,9 +67,6 @@ const Science = () => {
         </motion.div>
 
         <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', maxWidth: '1000px', padding: '0 24px' }}>
-          <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'white', textDecoration: 'none', marginBottom: '50px', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', opacity: 0.8 }}>
-            <ArrowLeft size={16} /> Back to Home
-          </Link>
           <motion.h1 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

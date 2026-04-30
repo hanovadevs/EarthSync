@@ -14,6 +14,7 @@ import Reviews from './components/Reviews'
 import CinematicContent from './components/CinematicContent'
 import Footer from './components/Footer'
 import ChatBot from './components/ChatBot'
+import Navbar from './components/Navbar'
 import Policy from './components/Policy'
 import PolicyTeaser from './components/PolicyTeaser'
 import ProductDetail from './components/ProductDetail'
@@ -100,6 +101,7 @@ function App() {
   return (
     <Router>
       <main style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
