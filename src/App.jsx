@@ -13,6 +13,7 @@ import Products from './components/Products'
 import Reviews from './components/Reviews'
 import CinematicContent from './components/CinematicContent'
 import Footer from './components/Footer'
+import ChatBot from './components/ChatBot'
 import Policy from './components/Policy'
 import PolicyTeaser from './components/PolicyTeaser'
 import ProductDetail from './components/ProductDetail'
@@ -110,6 +111,7 @@ function App() {
           <Route path="/policy" element={<Policy />} />
         </Routes>
         <Footer />
+        <ChatBot />
       </main>
     </Router>
   )
