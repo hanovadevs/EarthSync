@@ -137,7 +137,6 @@ const Products = () => {
                   <div style={{ marginBottom: '20px' }}>
                     <span style={{ fontSize: '0.65rem', fontWeight: 800, color: '#A3B18A', textTransform: 'uppercase', letterSpacing: '0.2em', display: 'block', marginBottom: '8px' }}>{product.category}</span>
                     <h3 style={{ fontSize: '1.2rem', fontWeight: 900, margin: '0 0 10px', lineHeight: 1.2, color: '#1A1A1A' }}>{product.title}</h3>
-                    <span style={{ fontWeight: 900, color: '#3B5233', fontSize: '1.4rem' }}>{product.price}</span>
                   </div>
                   
                   <div style={{ display: 'flex', gap: '10px', marginBottom: '25px' }}>

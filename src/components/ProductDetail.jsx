@@ -173,7 +173,6 @@ const ProductDetail = () => {
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', fontWeight: 900, color: '#3B5233' }}>{product.price}</span>
               <div style={{ backgroundColor: '#F0F4EF', padding: '8px 16px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '10px', color: '#3B5233', fontWeight: 800, fontSize: '0.7rem', border: '1px solid #E9EEE8' }}>
                 <ShieldCheck size={18} /> 1-YEAR WARRANTY
               </div>
