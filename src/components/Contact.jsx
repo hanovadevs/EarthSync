@@ -43,26 +43,31 @@ const Contact = () => {
 
     try {
       // FORMSPREE ENDPOINT
-      // You can replace 'your_id' with your actual Formspree ID
-      // or just use your email if you've already verified it with Formspree
-      const FORMSPREE_ENDPOINT = "https://formspree.io/f/service@earthsyncessentials.com";
+      // Pro Tip: Log in to Formspree, create a form, and use the ID (e.g. /f/mqkvovzk) 
+      // for 100% reliability with AJAX.
+      const FORMSPREE_ENDPOINT = "https://formspree.io/service@earthsyncessentials.com";
 
+      const data = new FormData(formRef.current);
+      
       const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
+        body: data,
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
+          'Accept': 'application/json'
+        }
       });
+
+      const result = await response.json();
 
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', type: 'Product Question', message: '' });
       } else {
+        console.error("Formspree Error:", result);
         setStatus('error');
       }
     } catch (error) {
+      console.error("Submission Error:", error);
       setStatus('error');
     }
   };
@@ -158,7 +163,7 @@ const Contact = () => {
               </div>
               <div>
                 <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700 }}>Visit us</span>
-                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>2360 lakewood road, Toms river nj 08755</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>2360 Lakewood Road, Toms River, NJ 08755</span>
               </div>
             </div>
 

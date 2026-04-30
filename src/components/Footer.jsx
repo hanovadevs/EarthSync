@@ -125,7 +125,7 @@ const Footer = () => {
                 <Phone size={14} color="#3B5233" /> +1 9085732722
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#888', fontSize: '0.85rem', lineHeight: '1.4' }}>
-                <MapPin size={14} color="#3B5233" /> 2360 lakewood right, Tom's river nj 08755
+                <MapPin size={14} color="#3B5233" /> 2360 Lakewood Road, Toms River, NJ 08755
               </li>
             </ul>
           </div>
