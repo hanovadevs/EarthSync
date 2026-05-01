@@ -44,7 +44,7 @@ const ProductDetail = () => {
 
       <main style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(20px, 5vw, 40px) 24px' }}>
         
-        <div style={{ 
+        <div className="responsive-grid" style={{ 
           display: 'grid', 
           gridTemplateColumns: window.innerWidth < 1024 ? '1fr' : '1fr 1fr', 
           gap: 'clamp(30px, 6vw, 60px)', 
@@ -90,6 +90,7 @@ const ProductDetail = () => {
               onMouseMove={handleMouseMove}
               style={{ 
                 flex: 1, 
+                minWidth: '280px',
                 height: 'clamp(300px, 40vh, 500px)', 
                 borderRadius: '24px', 
                 overflow: 'hidden', 
@@ -210,7 +211,7 @@ const ProductDetail = () => {
           </motion.div>
         </div>
 
-        <div style={{ 
+        <div className="responsive-grid" style={{ 
           display: 'grid', 
           gridTemplateColumns: window.innerWidth < 1024 ? '1fr' : '1.8fr 1fr', 
           gap: 'clamp(40px, 10vw, 80px)', 

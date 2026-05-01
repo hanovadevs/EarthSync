@@ -6,7 +6,7 @@ const Showcase = () => {
     <section style={{ padding: '120px 24px', backgroundColor: 'white' }}>
       <div className="container">
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '80px' }}>
-          <div style={{ flex: '1 1 450px' }}>
+          <div style={{ flex: '1 1 clamp(280px, 100%, 450px)' }}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -49,7 +49,7 @@ const Showcase = () => {
             </motion.div>
           </div>
           
-          <div style={{ flex: '1 1 450px', position: 'relative' }}>
+          <div style={{ flex: '1 1 clamp(280px, 100%, 450px)', position: 'relative' }}>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}

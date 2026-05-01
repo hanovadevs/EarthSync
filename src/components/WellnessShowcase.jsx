@@ -60,7 +60,7 @@ const WellnessShowcase = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              style={{ position: 'absolute', bottom: '40px', left: '-30px', backgroundColor: 'white', padding: '20px 30px', borderRadius: '20px', zIndex: 2, boxShadow: '0 20px 40px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '15px' }}
+              style={{ position: 'absolute', bottom: 'clamp(10px, 4vw, 40px)', left: 'clamp(10px, 2vw, -30px)', backgroundColor: 'white', padding: '20px 30px', borderRadius: '20px', zIndex: 2, boxShadow: '0 20px 40px rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '15px' }}
             >
                <div style={{ backgroundColor: '#3B5233', padding: '10px', borderRadius: '50%', color: 'white' }}><Sparkles size={18} /></div>
                <div>

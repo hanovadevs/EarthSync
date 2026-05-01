@@ -150,18 +150,19 @@ const Science = () => {
                 transform: 'rotateY(180deg)', 
                 backgroundColor: '#1A1A1A', 
                 borderRadius: '60px', 
-                padding: '80px', 
+                padding: 'clamp(30px, 5vw, 80px)', 
                 color: 'white',
                 boxShadow: '0 60px 150px rgba(0,0,0,0.4)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                overflowY: 'auto'
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px' }}>
                   <h3 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#A3B18A', letterSpacing: '-0.02em' }}>TECHNICAL SPECS</h3>
                   <div style={{ backgroundColor: 'rgba(163, 177, 138, 0.15)', color: '#A3B18A', padding: '10px 24px', borderRadius: '100px', fontSize: '0.8rem', fontWeight: 900, letterSpacing: '0.1em' }}>VERIFIED 2026</div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '40px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth < 768 ? '1fr' : 'repeat(2, 1fr)', gap: 'clamp(15px, 3vw, 40px)' }}>
                   {specs.map((s, i) => (
                     <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '15px' }}>
                       <span style={{ display: 'block', fontSize: '0.75rem', fontWeight: 800, color: '#A3B18A', textTransform: 'uppercase', letterSpacing: '0.2em', marginBottom: '8px' }}>{s.label}</span>

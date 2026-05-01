@@ -9,7 +9,7 @@ const Explanation = () => {
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '80px' }}>
           
           {/* Image Side */}
-          <div style={{ flex: '1 1 500px', position: 'relative' }}>
+          <div style={{ flex: '1 1 clamp(280px, 100%, 500px)', position: 'relative' }}>
             <motion.div
               initial={{ opacity: 0, clipPath: 'inset(0 100% 0 0)' }}
               whileInView={{ opacity: 1, clipPath: 'inset(0 0% 0 0)' }}
@@ -32,13 +32,13 @@ const Explanation = () => {
               transition={{ delay: 1, duration: 0.8 }}
               style={{ 
                 position: 'absolute', 
-                bottom: '-30px', 
-                right: '-30px', 
+                bottom: 'clamp(-10px, -2vw, -30px)', 
+                right: 'clamp(10px, 2vw, -30px)', 
                 backgroundColor: '#3B5233', 
                 color: 'white', 
-                padding: '40px', 
+                padding: 'clamp(20px, 4vw, 40px)', 
                 borderRadius: '30px',
-                maxWidth: '280px',
+                maxWidth: 'clamp(200px, 60vw, 280px)',
                 boxShadow: '0 30px 60px rgba(59, 82, 51, 0.3)'
               }}
             >
@@ -50,7 +50,7 @@ const Explanation = () => {
           </div>
 
           {/* Text Side */}
-          <div style={{ flex: '1 1 400px' }}>
+          <div style={{ flex: '1 1 clamp(280px, 100%, 400px)' }}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -50,9 +50,20 @@ const Navbar = () => {
           padding: 'clamp(10px, 2vw, 20px) clamp(20px, 5vw, 60px)',
           borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
           transition: 'border-bottom 0.5s ease',
+          boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.03)' : 'none',
         }}
         className="navbar"
       >
+        {/* Dark gradient for visibility on light images before scroll */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%)',
+          opacity: scrolled ? 0 : 1,
+          transition: 'opacity 0.5s ease',
+          pointerEvents: 'none',
+          zIndex: -1
+        }} />
         <Link to="/" className="nav-logo" style={{ color: 'inherit', display: 'flex', alignItems: 'center', gap: 'clamp(10px, 2vw, 20px)', textDecoration: 'none' }}>
           <motion.img
             style={{ filter: logoFilter, height: 'clamp(35px, 5vw, 60px)', width: 'auto' }}
