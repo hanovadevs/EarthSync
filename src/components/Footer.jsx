@@ -119,7 +119,7 @@ const Footer = () => {
             <span style={columnTitleStyle}>Connect</span>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#888', fontSize: '0.85rem' }}>
-                <Mail size={14} color="#3B5233" /> service@earthsyncessentials.com
+                <Mail size={14} color="#3B5233" /> service@earthsyncessential.com
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#888', fontSize: '0.85rem' }}>
                 <Phone size={14} color="#3B5233" /> +1 9085732722

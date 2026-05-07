@@ -45,7 +45,7 @@ const Contact = () => {
       // FORMSPREE ENDPOINT
       // Pro Tip: Log in to Formspree, create a form, and use the ID (e.g. /f/mqkvovzk) 
       // for 100% reliability with AJAX.
-      const FORMSPREE_ENDPOINT = "https://formspree.io/service@earthsyncessentials.com";
+      const FORMSPREE_ENDPOINT = "https://formspree.io/service@earthsyncessential.com";
 
       const data = new FormData(formRef.current);
       
@@ -134,13 +134,13 @@ const Contact = () => {
             <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#3B5233', display: 'block', marginBottom: '30px' }}>Contact Details</span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '60px', lineHeight: 1.1 }}>Reach out to our <br /> rest experts.</h2>
 
-            <a href="mailto:service@earthsyncessentials.com" style={contactItemStyle} className="contact-hover">
+            <a href="mailto:service@earthsyncessential.com" style={contactItemStyle} className="contact-hover">
               <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#E9EDE7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Mail size={24} />
               </div>
               <div>
                 <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.5, textTransform: 'uppercase', fontWeight: 700 }}>Email us</span>
-                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>service@earthsyncessentials.com</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 600 }}>service@earthsyncessential.com</span>
               </div>
             </a>
 
