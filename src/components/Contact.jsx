@@ -22,55 +22,9 @@ const contactFAQs = [
 const Contact = () => {
   const formRef = useRef();
   const [status, setStatus] = useState('idle'); // idle, sending, success, error
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    type: 'Product Question',
-    message: ''
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('sending');
-
-    try {
-      // FORMSPREE ENDPOINT
-      // Pro Tip: Log in to Formspree, create a form, and use the ID (e.g. /f/mqkvovzk) 
-      // for 100% reliability with AJAX.
-      const FORMSPREE_ENDPOINT = "https://formspree.io/service@earthsyncessential.com";
-
-      const data = new FormData(formRef.current);
-      
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', type: 'Product Question', message: '' });
-      } else {
-        console.error("Formspree Error:", result);
-        setStatus('error');
-      }
-    } catch (error) {
-      console.error("Submission Error:", error);
-      setStatus('error');
-    }
-  };
 
   const inputStyle = {
     width: '100%',
@@ -230,8 +184,8 @@ const Contact = () => {
               ) : (
                 <motion.form 
                   key="form"
-                  ref={formRef}
-                  onSubmit={handleSubmit}
+                  action="https://formspree.io/service@earthsyncessential.com"
+                  method="POST"
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}
@@ -242,8 +196,6 @@ const Contact = () => {
                       name="name"
                       placeholder="Full Name" 
                       required
-                      value={formData.name}
-                      onChange={handleChange}
                       style={inputStyle} 
                     />
                   </div>
@@ -253,16 +205,12 @@ const Contact = () => {
                       name="email"
                       placeholder="Email Address" 
                       required
-                      value={formData.email}
-                      onChange={handleChange}
                       style={inputStyle} 
                     />
                   </div>
                   <div style={{ position: 'relative' }}>
                     <select 
                       name="type"
-                      value={formData.type}
-                      onChange={handleChange}
                       style={{ ...inputStyle, appearance: 'none', cursor: 'pointer' }}
                     >
                       <option>Product Question</option>
@@ -277,25 +225,17 @@ const Contact = () => {
                       placeholder="How can we help?" 
                       rows="4" 
                       required
-                      value={formData.message}
-                      onChange={handleChange}
                       style={{ ...inputStyle, resize: 'none' }}
                     ></textarea>
                   </div>
 
-                  {status === 'error' && (
-                    <div style={{ color: '#D64545', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', fontWeight: 600 }}>
-                      <AlertCircle size={18} /> Something went wrong. Please try again.
-                    </div>
-                  )}
-
                   <motion.button
-                    disabled={status === 'sending'}
-                    whileHover={{ scale: status === 'sending' ? 1 : 1.02 }}
-                    whileTap={{ scale: status === 'sending' ? 1 : 0.98 }}
+                    type="submit"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                     style={{
-                      backgroundColor: status === 'sending' ? '#E9EDE7' : '#3B5233',
-                      color: status === 'sending' ? '#3B5233' : 'white',
+                      backgroundColor: '#3B5233',
+                      color: 'white',
                       border: 'none',
                       padding: '24px',
                       borderRadius: '100px',
@@ -305,17 +245,13 @@ const Contact = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '15px',
-                      cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+                      cursor: 'pointer',
                       marginTop: '20px',
-                      boxShadow: status === 'sending' ? 'none' : '0 20px 40px rgba(59, 82, 51, 0.2)',
+                      boxShadow: '0 20px 40px rgba(59, 82, 51, 0.2)',
                       transition: 'all 0.3s ease'
                     }}
                   >
-                    {status === 'sending' ? (
-                      <>Processing <Loader2 size={18} className="animate-spin" /></>
-                    ) : (
-                      <>Send Message <Send size={18} /></>
-                    )}
+                    <>Send Message <Send size={18} /></>
                   </motion.button>
                 </motion.form>
               )}
