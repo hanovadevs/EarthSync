@@ -317,6 +317,33 @@
   word-break: break-word;
 }
 
+/* Markdown styling inside bubbles */
+.message-bubble p {
+  margin-bottom: 0.5em;
+}
+.message-bubble p:last-child {
+  margin-bottom: 0;
+}
+.message-bubble ul, .message-bubble ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+}
+.message-bubble li {
+  margin-bottom: 0.25em;
+}
+.message-bubble strong {
+  font-weight: 700;
+}
+.message-bubble em {
+  font-style: italic;
+}
+.message-bubble a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .chatbot-message.bot .message-bubble {
   background: white;
   border-radius: 16px 16px 16px 4px;

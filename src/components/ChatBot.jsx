@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 import './ChatBot.css';
 
 const API_URL = '/api/chat';
@@ -185,7 +186,7 @@ export default function ChatBot() {
             </div>
 
             {/* Messages */}
-            <div className="chatbot-messages" id="chatbot-messages">
+            <div className="chatbot-messages" id="chatbot-messages" data-lenis-prevent="true">
               {messages.map((msg, i) => (
                 <div key={i} className={`chatbot-message ${msg.role === 'assistant' ? 'bot' : 'user'}`}>
                   {msg.role === 'assistant' && (
@@ -194,7 +195,11 @@ export default function ChatBot() {
                     </div>
                   )}
                   <div className="message-bubble">
-                    {msg.content}
+                    {msg.role === 'assistant' ? (
+                      <ReactMarkdown>{msg.content}</ReactMarkdown>
+                    ) : (
+                      msg.content
+                    )}
                   </div>
                 </div>
               ))}
@@ -245,6 +250,7 @@ export default function ChatBot() {
                 <textarea
                   ref={textareaRef}
                   className="chatbot-input"
+                  data-lenis-prevent="true"
                   value={input}
                   onChange={handleInputChange}
                   onKeyDown={handleKeyDown}
