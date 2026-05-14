@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ShoppingCart, ExternalLink, Info, Check, ArrowLeft, Search, RefreshCw, Package } from 'lucide-react';
 import { productsData } from '../data/products';
+import WarrantyTeaser from './WarrantyTeaser';
 
 const Products = () => {
   const [filter, setFilter] = useState('All');
@@ -189,6 +190,7 @@ const Products = () => {
         </div>
       </section>
 
+      <WarrantyTeaser />
     </div>
   );
 };

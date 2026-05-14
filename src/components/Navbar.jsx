@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: '/science', label: 'Science' },
   { to: '/research', label: 'Research' },
   { to: '/about', label: 'About' },
+  { to: '/warranty', label: 'Warranty' },
   { to: '/contact', label: 'Contact' },
 ];
 

@@ -19,6 +19,8 @@ import Navbar from './components/Navbar'
 import Policy from './components/Policy'
 import PolicyTeaser from './components/PolicyTeaser'
 import ProductDetail from './components/ProductDetail'
+import Warranty from './components/Warranty'
+import WarrantyTeaser from './components/WarrantyTeaser'
 import WellnessShowcase from './components/WellnessShowcase'
 import Research from './components/Research'
 import ResearchTeaser from './components/ResearchTeaser'
@@ -74,6 +76,7 @@ const Home = () => (
     <HomeAbout />
     <ResearchTeaser />
     <Showcase />
+    <WarrantyTeaser />
     <PolicyTeaser />
     <FAQ items={homeFAQs} />
   </>
@@ -118,6 +121,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/policy" element={<Policy />} />
+          <Route path="/warranty" element={<Warranty />} />
         </Routes>
         <Footer />
         <ChatBot />
