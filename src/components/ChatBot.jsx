@@ -95,7 +95,13 @@ export default function ChatBot() {
         body: JSON.stringify({ messages: apiMessages }),
       });
 
-      const data = await response.json();
+      let data;
+      const text = await response.text();
+      try {
+        data = JSON.parse(text);
+      } catch (e) {
+        throw new Error(`Server returned an invalid response (${response.status})`);
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Something went wrong');

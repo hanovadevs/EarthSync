@@ -6,6 +6,25 @@ import FAQ from './FAQ';
 // REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxXQnwY_7trJBtA--x6ElszYcDaFIVX9fzCEkOKfr2DZApCQus29gZBjMGVDc_yccIX/exec';
 
+const warrantyFAQs = [
+  {
+    question: "How long does a warranty claim take to process?",
+    answer: "Once we receive your claim with the required photos and serial number, our team typically processes it within 24-48 business hours. If approved, a replacement will be shipped immediately."
+  },
+  {
+    question: "Do I need to keep the original packaging?",
+    answer: "No, you do not need the original packaging to file a claim. However, you MUST have your product's unique serial number, which is printed on the care tag attached to the product itself."
+  },
+  {
+    question: "What happens if my grounding cord breaks?",
+    answer: "The grounding cord and connection plug are fully covered under the 1-year warranty against manufacturing defects. If it snaps or fails under normal use, we will replace it."
+  },
+  {
+    question: "Is fading or discoloration covered?",
+    answer: "Minor fading over time is natural for cotton products and is not covered. However, if the silver matrix oxidizes prematurely or loses its conductive properties within the first year due to a manufacturing defect, it is fully covered."
+  }
+];
+
 const Warranty = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -339,7 +358,58 @@ const Warranty = () => {
 
           </motion.div>
         </div>
+
+        {/* Coverage Details Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ marginTop: 'clamp(60px, 8vw, 100px)', display: 'grid', gridTemplateColumns: window.innerWidth < 768 ? '1fr' : '1fr 1fr', gap: '30px' }}
+        >
+          <div style={{ padding: '40px', borderRadius: '24px', backgroundColor: '#F9F9F9', border: '1px solid #eee' }}>
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 900, marginBottom: '20px', color: '#1A1A1A', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <CheckCircle2 size={24} color="#3B5233" /> What Is Covered
+            </h3>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '15px', color: '#555', lineHeight: 1.6 }}>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <div style={{ width: '6px', height: '6px', backgroundColor: '#3B5233', borderRadius: '50%', marginTop: '10px', flexShrink: 0 }} />
+                <span><strong>Conductivity Failure:</strong> If the silver matrix loses its conductive properties under normal use within 1 year.</span>
+              </li>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <div style={{ width: '6px', height: '6px', backgroundColor: '#3B5233', borderRadius: '50%', marginTop: '10px', flexShrink: 0 }} />
+                <span><strong>Manufacturing Defects:</strong> Torn seams, unraveled stitching, or defective snaps upon arrival.</span>
+              </li>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <div style={{ width: '6px', height: '6px', backgroundColor: '#3B5233', borderRadius: '50%', marginTop: '10px', flexShrink: 0 }} />
+                <span><strong>Hardware Issues:</strong> Broken grounding cables or defective safety resistors (100kΩ).</span>
+              </li>
+            </ul>
+          </div>
+
+          <div style={{ padding: '40px', borderRadius: '24px', backgroundColor: '#FFF5F5', border: '1px solid #FFEBEB' }}>
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 900, marginBottom: '20px', color: '#1A1A1A', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <AlertCircle size={24} color="#E53E3E" /> What Is Not Covered
+            </h3>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '15px', color: '#555', lineHeight: 1.6 }}>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <div style={{ width: '6px', height: '6px', backgroundColor: '#E53E3E', borderRadius: '50%', marginTop: '10px', flexShrink: 0 }} />
+                <span><strong>Improper Washing:</strong> Damage caused by bleach, fabric softeners, whitening detergents, or high heat.</span>
+              </li>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <div style={{ width: '6px', height: '6px', backgroundColor: '#E53E3E', borderRadius: '50%', marginTop: '10px', flexShrink: 0 }} />
+                <span><strong>Wear and Tear:</strong> Normal piling, minor fading, or aesthetic degradation over time that does not affect conductivity.</span>
+              </li>
+              <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+                <div style={{ width: '6px', height: '6px', backgroundColor: '#E53E3E', borderRadius: '50%', marginTop: '10px', flexShrink: 0 }} />
+                <span><strong>Accidental Damage:</strong> Burns, pet damage, or physical rips caused by mishandling.</span>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+
       </main>
+
+      <FAQ items={warrantyFAQs} />
 
       <style dangerouslySetInnerHTML={{
         __html: `
