@@ -22,39 +22,42 @@ import ProductDetail from './components/ProductDetail'
 import WellnessShowcase from './components/WellnessShowcase'
 import Research from './components/Research'
 import ResearchTeaser from './components/ResearchTeaser'
+import HomeAbout from './components/HomeAbout'
+import HomeScienceDetails from './components/HomeScienceDetails'
+import HomeProducts from './components/HomeProducts'
 
 const homeFAQs = [
   {
-    question: "What is grounding?",
-    answer: "Grounding, also known as Earthing, is the practice of connecting your body to the Earth's natural surface energy. This is typically done by walking barefoot outdoors or using conductive products indoors that bridge the connection to the Earth's electrical field."
+    question: "What is the physiological premise of grounding?",
+    answer: "Grounding (or Earthing) refers to direct physical contact with the surface of the Earth. The Earth maintains a negative electrical potential on its surface. When the human body connects to this field, it absorbs free electrons, which are hypothesized to neutralize positively charged free radicals in the body."
   },
   {
-    question: "How does grounding work?",
-    answer: "The Earth's surface has a limitless supply of free electrons. When you make contact, these electrons flow into your body, where they act as powerful antioxidants, neutralizing positively charged free radicals that cause inflammation and oxidative stress."
+    question: "How does electron transfer affect inflammation?",
+    answer: "Inflammation is primarily caused by reactive oxygen species (ROS), which are positively charged molecules missing an electron. By supplying the body with an abundant source of free electrons from the Earth, grounding provides the necessary components to neutralize these free radicals, thereby potentially reducing acute and chronic inflammation."
   },
   {
-    question: "What are the benefits of grounding?",
-    answer: "Commonly reported benefits include reduced inflammation, improved sleep quality, faster muscle recovery, decreased stress levels (cortisol normalization), and improved circulation."
+    question: "What are the documented effects on sleep?",
+    answer: "Clinical studies have shown that grounding during sleep normalizes the day-night cortisol rhythm. This helps synchronize circadian profiles, leading to improved sleep onset, deeper sleep cycles, and reduced instances of night-time waking and sleep apnea."
   },
   {
-    question: "How long does it take to feel results?",
-    answer: "Many people feel an immediate sense of relaxation or 'tingling' upon connection. Improved sleep usually occurs within the first 1-3 nights of consistent use, while chronic inflammation may take 2-4 weeks to show significant reduction."
+    question: "How is indoor grounding achieved?",
+    answer: "Modern electrical grids include a designated ground wire connected directly to the earth via a conductive rod. Specialized conductive materials (like silver or carbon matrices) can connect to this ground port, extending the Earth's electrical field indoors safely without drawing active electrical current."
   },
   {
-    question: "Is grounding safe?",
-    answer: "Yes, grounding is completely natural. You are simply restoring the connection humans have had for thousands of years. Our products include a built-in safety resistor that prevents any electrical surges from reaching you."
+    question: "Is grounding safe for daily practice?",
+    answer: "Yes, the practice simply replicates a biological state humans maintained throughout history before the invention of synthetic footwear and elevated bedding. Properly designed indoor grounding tools incorporate safety resistors (typically 100kΩ) to prevent any electrical current from reaching the user."
   },
   {
-    question: "Can I ground indoors?",
-    answer: "Absolutely. EarthSync sheets use pure silver fibers to conduct the Earth's energy from a standard wall outlet's ground port (the third hole) directly to your skin while you sleep."
+    question: "Can grounding interact with medical conditions?",
+    answer: "Because grounding can improve blood viscosity and circulation, individuals taking blood-thinning medications or thyroid medications should consult with a healthcare provider. The physiological changes may require a doctor to adjust medication dosages."
   },
   {
-    question: "How often should I ground?",
-    answer: "The more the better. We recommend grounding during sleep (7-8 hours) as it's the time when your body is naturally focused on repair and recovery."
+    question: "How long does it take for the body to respond?",
+    answer: "Physiological responses begin immediately. Skin conductance changes in milliseconds. Muscle tension and pulse rate shift within minutes. However, resolving long-standing chronic inflammation or resetting deep circadian rhythms often requires continuous, multi-hour daily exposure (like during sleep) over several weeks."
   },
   {
-    question: "Do Earthing products really work?",
-    answer: "Yes. The conductivity of our products can be verified with a simple voltmeter. Clinical studies published in peer-reviewed journals have documented the physiological changes that occur when the body is grounded."
+    question: "Is there empirical evidence supporting these claims?",
+    answer: "Yes. Over two dozen peer-reviewed studies have been published in journals such as the 'Journal of Inflammation Research' and the 'Journal of Environmental and Public Health', using methodologies ranging from thermography to blood viscosity analysis to document the systemic effects of Earthing."
   }
 ];
 
@@ -62,10 +65,13 @@ const Home = () => (
   <>
     <Hero />
     <Explanation />
+    <HomeScienceDetails />
+    <HomeProducts />
     <Benefits />
     <Reviews />
     <CinematicContent />
     <WellnessShowcase />
+    <HomeAbout />
     <ResearchTeaser />
     <Showcase />
     <PolicyTeaser />

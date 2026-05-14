@@ -7,20 +7,28 @@ import WellnessShowcase from './WellnessShowcase';
 
 const scienceFAQs = [
   {
-    question: "Is there real scientific evidence for grounding?",
-    answer: "Yes. Over 20 peer-reviewed studies have been published in journals such as the 'Journal of Environmental and Public Health'. These studies document measurable changes in cortisol levels, inflammation markers (CRP), and blood viscosity."
+    question: "Is there empirical scientific evidence for grounding?",
+    answer: "Yes. Over 20 peer-reviewed studies have been published in journals such as the 'Journal of Environmental and Public Health' and 'Journal of Alternative and Complementary Medicine'. These studies utilize objective measurements including EEG, EMG, blood chemistry panels, and thermography to document physiological changes."
   },
   {
-    question: "How do the silver fibers actually conduct?",
-    answer: "We use 99.9% pure silver, which is one of the most conductive elements on Earth. The fibers (10% of the weave) are integrated directly into the cotton matrix (90%), creating a continuous conductive grid."
+    question: "How do conductive fibers interact with the body?",
+    answer: "Silver is the most electrically conductive element. When woven into a fabric matrix, silver fibers create a continuous conductive grid. When the skin touches this grid, the body’s capacitance equalizes with the Earth’s, allowing for a rapid transfer of electrons."
   },
   {
-    question: "Does grounding work through pajamas?",
-    answer: "Yes, to an extent. While direct skin contact is optimal, the moisture (even invisible perspiration) in your clothing will conduct the electrons. However, for the fastest results, we recommend at least some direct contact."
+    question: "Does grounding efficacy decrease through clothing?",
+    answer: "Direct skin contact provides the lowest resistance pathway for electron transfer. However, grounding can still occur through clothing. Natural body moisture (insensible perspiration) hydrates the fabric, creating a semi-conductive channel that allows electrons to flow, though at a slightly reduced rate compared to bare skin."
   },
   {
     question: "What is the difference between direct ground and outlet ground?",
-    answer: "There is no functional difference. The third hole in your outlet is connected to a copper rod driven into the earth outside your home. Our sheets simply tap into this existing safety system."
+    answer: "Electrically, there is no functional difference. The grounding port (the third hole) in a modern electrical outlet is directly wired to a conductive metal rod driven into the earth outside the building. Utilizing this port taps into the same terrestrial electrical field as standing barefoot outside."
+  },
+  {
+    question: "How does grounding affect blood viscosity?",
+    answer: "Studies indicate that grounding increases the zeta potential (the negative charge on the surface of red blood cells). This increased negative charge causes the cells to repel each other more strongly, reducing blood clumping (rouleaux formation) and effectively decreasing blood viscosity, which improves cardiovascular circulation."
+  },
+  {
+    question: "Can grounding protect against Electromagnetic Fields (EMFs)?",
+    answer: "When the body is grounded, it is maintained at the Earth's electrical potential. This creates an 'umbrella effect' that significantly reduces the alternating current (AC) voltage induced on the body by surrounding environmental electromagnetic fields from wires and appliances."
   }
 ];
 

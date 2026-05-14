@@ -8,12 +8,20 @@ import PolicyTeaser from './PolicyTeaser';
 
 const aboutFAQs = [
   {
-    question: "Is this the official EarthSync Essentials store?",
-    answer: "Yes, this is our official digital presence. For security and logistics, all our transactions are handled through our Amazon Brand Store."
+    question: "Where are the products manufactured and distributed?",
+    answer: "Products are designed and engineered in the United States. Global logistics, secure transactions, and worldwide fulfillment are securely managed through the Amazon Brand Store infrastructure."
   },
   {
-    question: "Do you ship worldwide?",
-    answer: "Yes, through Amazon Global Shipping, our products can reach over 100 countries."
+    question: "Are these items available internationally?",
+    answer: "Yes, utilizing Amazon Global Shipping, the distribution network covers over 100 countries globally."
+  },
+  {
+    question: "What materials are used in the manufacturing process?",
+    answer: "The primary matrix consists of 90% ethically sourced organic cotton, intertwined with 10% pure silver threading. This specific ratio provides optimal electrical conductivity while maintaining structural integrity and comfort."
+  },
+  {
+    question: "How is product quality verified?",
+    answer: "Every production batch undergoes continuity testing using standard electrical multimeters. The conductivity of the silver matrix must meet strict resistance thresholds before being approved for distribution."
   }
 ];
 

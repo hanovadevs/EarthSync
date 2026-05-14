@@ -4,9 +4,23 @@ import { Plus, Minus } from 'lucide-react';
 
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div style={{ borderBottom: '1px solid rgba(0,0,0,0.1)', overflow: 'hidden' }}>
+    <motion.div 
+      initial={false}
+      animate={{ backgroundColor: isOpen ? 'rgba(59, 82, 51, 0.03)' : (isHovered ? 'rgba(0,0,0,0.01)' : 'transparent') }}
+      style={{ 
+        marginBottom: '15px', 
+        borderRadius: '20px', 
+        border: '1px solid',
+        borderColor: isOpen ? 'rgba(59, 82, 51, 0.2)' : 'rgba(0,0,0,0.05)',
+        overflow: 'hidden',
+        transition: 'border-color 0.3s ease'
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <button
         onClick={() => setIsOpen(!isOpen)}
         style={{
@@ -14,20 +28,20 @@ const FAQItem = ({ question, answer }) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '30px 0',
+          padding: '25px 30px',
           backgroundColor: 'transparent',
           border: 'none',
           cursor: 'pointer',
           textAlign: 'left'
         }}
       >
-        <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#1A1A1A' }}>{question}</span>
+        <span style={{ fontSize: '1.15rem', fontWeight: 700, color: isOpen ? '#3B5233' : '#1A1A1A', transition: 'color 0.3s ease' }}>{question}</span>
         <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
+          animate={{ rotate: isOpen ? 180 : 0, backgroundColor: isOpen ? '#3B5233' : '#F3F6F2', color: isOpen ? 'white' : '#3B5233' }}
           transition={{ duration: 0.3 }}
-          style={{ color: '#3B5233' }}
+          style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          {isOpen ? <Minus size={24} /> : <Plus size={24} />}
+          {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </motion.div>
       </button>
       
@@ -39,13 +53,13 @@ const FAQItem = ({ question, answer }) => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
-            <div style={{ paddingBottom: '30px', color: '#666', lineHeight: 1.8, fontSize: '1rem', maxWidth: '800px' }}>
+            <div style={{ padding: '0 30px 30px', color: '#555', lineHeight: 1.8, fontSize: '1rem', maxWidth: '800px' }}>
               {answer}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 

@@ -6,16 +6,24 @@ import FAQ from './FAQ';
 
 const contactFAQs = [
   {
-    question: "How long does shipping take?",
-    answer: "Most orders are processed within 24 hours. Standard shipping typically takes 3-5 business days within the continental US. International shipping varies by location but generally takes 7-14 days."
+    question: "What is the standard shipping timeframe?",
+    answer: "Standard order processing occurs within 24 hours. Domestic shipping within the continental US typically requires 3-5 business days. International shipping timelines vary by region but generally range from 7 to 14 days."
   },
   {
-    question: "Do you offer a trial period?",
-    answer: "Yes! We offer a 30-night 'Sync Guarantee'. If you don't feel a measurable difference in your sleep quality, you can return your sheets for a full refund."
+    question: "What is the return policy?",
+    answer: "A standard 30-night evaluation period is provided. If physiological benefits (such as improved sleep quality or reduced inflammation) are not observed within this timeframe, items may be returned for a complete refund."
   },
   {
-    question: "How do I wash my grounding sheets?",
-    answer: "Wash in warm water with a mild liquid detergent. Avoid using bleach, fabric softeners, or whitening detergents, as these can coat the silver fibers and reduce their conductivity over time."
+    question: "What is the recommended maintenance protocol for conductive materials?",
+    answer: "Conductive fabrics should be washed in warm water using a mild liquid detergent. Bleach, fabric softeners, and whitening agents must be avoided, as these chemicals oxidize or coat the silver fibers, degrading their electrical conductivity over time."
+  },
+  {
+    question: "How can I verify my grounding connection?",
+    answer: "The electrical continuity of grounding equipment can be verified using a standard multimeter or a specialized continuity tester. By placing one node on the fabric matrix and the other on the grounding pin, a closed circuit should be confirmed."
+  },
+  {
+    question: "Do you provide technical support for setup?",
+    answer: "Yes, our support team is available to assist with any technical inquiries regarding outlet testing, conductivity verification, or optimal setup configurations for your specific living environment."
   }
 ];
 
