@@ -53,37 +53,39 @@ const ProductDetail = () => {
         }}>
           
           {/* Gallery */}
-          <div style={{ display: 'flex', flexWrap: 'wrap-reverse', gap: '15px' }}>
-            <div style={{ display: 'flex', flexDirection: window.innerWidth < 640 ? 'row' : 'column', gap: '10px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', flexDirection: window.innerWidth < 768 ? 'column-reverse' : 'row', gap: '20px' }}>
+            {/* Thumbnails */}
+            <div style={{ display: 'flex', flexDirection: window.innerWidth < 768 ? 'row' : 'column', gap: '12px', overflowX: 'auto', padding: '4px' }}>
               {mediaList.map((item, i) => (
                 <motion.div 
                   key={i}
                   onClick={() => setActiveMedia(i)}
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   style={{ 
-                    width: 'clamp(50px, 10vw, 65px)', 
-                    height: 'clamp(50px, 10vw, 65px)', 
-                    borderRadius: '12px', 
+                    width: '70px', 
+                    height: '70px', 
+                    flexShrink: 0,
+                    borderRadius: '16px', 
                     overflow: 'hidden', 
                     cursor: 'pointer',
-                    border: activeMedia === i ? '2px solid #3B5233' : '1px solid #eee',
-                    position: 'relative',
-                    transition: 'border 0.3s ease',
-                    boxShadow: activeMedia === i ? '0 5px 15px rgba(59, 82, 51, 0.1)' : 'none'
+                    border: activeMedia === i ? '2px solid #3B5233' : '2px solid transparent',
+                    boxShadow: activeMedia === i ? '0 4px 12px rgba(59, 82, 51, 0.2)' : '0 2px 8px rgba(0,0,0,0.05)',
+                    transition: 'all 0.3s ease'
                   }}
                 >
                   {item.type === 'video' ? (
-                    <div style={{ width: '100%', height: '100%', backgroundColor: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                       <Play size={20} color="white" fill="white" />
+                    <div style={{ width: '100%', height: '100%', backgroundColor: '#1A1A1A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                       <Play size={24} color="white" fill="white" />
                     </div>
                   ) : (
-                    <img src={item.url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={item.url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt={`Thumbnail ${i}`} />
                   )}
                 </motion.div>
               ))}
             </div>
 
+            {/* Main Image */}
             <div 
               ref={imgRef}
               onMouseEnter={() => !mediaList[activeMedia].type === 'video' && setIsZooming(true)}
@@ -91,14 +93,13 @@ const ProductDetail = () => {
               onMouseMove={handleMouseMove}
               style={{ 
                 flex: 1, 
-                minWidth: '280px',
-                height: 'clamp(300px, 40vh, 500px)', 
-                borderRadius: '24px', 
+                height: 'clamp(400px, 60vh, 600px)', 
+                borderRadius: '30px', 
                 overflow: 'hidden', 
                 backgroundColor: '#F9F9F9', 
-                border: '1px solid #eee',
                 position: 'relative',
-                cursor: mediaList[activeMedia].type === 'video' ? 'default' : 'crosshair'
+                cursor: mediaList[activeMedia].type === 'video' ? 'default' : 'crosshair',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.08)'
               }}
             >
               <AnimatePresence mode="wait">
@@ -126,21 +127,22 @@ const ProductDetail = () => {
                     initial={{ opacity: 0 }}
                     animate={{ 
                       opacity: 1,
-                      scale: isZooming ? 2.2 : 1,
+                      scale: isZooming ? 2.5 : 1,
                       transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`
                     }}
                     exit={{ opacity: 0 }}
                     transition={{ 
-                      scale: { type: 'tween', duration: 0.2 },
+                      scale: { type: 'tween', duration: 0.3 },
                       opacity: { duration: 0.4 }
                     }}
                     src={mediaList[activeMedia].url} 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    alt="Main Product"
                   />
                 )}
               </AnimatePresence>
               {!isZooming && mediaList[activeMedia].type === 'image' && window.innerWidth > 768 && (
-                <div style={{ position: 'absolute', bottom: '20px', right: '20px', backgroundColor: 'rgba(255,255,255,0.8)', padding: '8px 12px', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 700, pointerEvents: 'none', border: '1px solid #eee' }}>
+                <div style={{ position: 'absolute', bottom: '25px', right: '25px', backgroundColor: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(10px)', padding: '10px 16px', borderRadius: '100px', fontSize: '0.7rem', fontWeight: 800, pointerEvents: 'none', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', color: '#1A1A1A' }}>
                    HOVER TO ZOOM
                 </div>
               )}
@@ -149,24 +151,39 @@ const ProductDetail = () => {
 
           {/* Right Column */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ paddingTop: '10px' }}
+            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
           >
-            <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#A3B18A', textTransform: 'uppercase', letterSpacing: '0.3em', display: 'block', marginBottom: '15px' }}>
-              Clinical Grade Earthing
-            </span>
-            <h1 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '15px', letterSpacing: '-0.02em', color: '#1A1A1A' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
+               <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#A3B18A', textTransform: 'uppercase', letterSpacing: '0.2em' }}>
+                 Clinical Grade Earthing
+               </span>
+               <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+                 {[...Array(5)].map((_, i) => <CheckCircle2 key={i} size={12} color="#3B5233" fill="#3B5233" style={{ border: 'none' }} />)}
+                 <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#666', marginLeft: '4px' }}>4.9/5</span>
+               </div>
+            </div>
+
+            <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 900, lineHeight: 1.2, marginBottom: '15px', letterSpacing: '-0.02em', color: '#1A1A1A' }}>
               {product.title}
             </h1>
-            <p style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', color: '#666', fontWeight: 300, marginBottom: '25px', lineHeight: 1.6 }}>
+            
+            <p style={{ fontSize: '1rem', color: '#666', fontWeight: 400, marginBottom: '20px', lineHeight: 1.6 }}>
               {product.subtitle}
             </p>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px', flexWrap: 'wrap' }}>
-              <div style={{ backgroundColor: '#F0F4EF', padding: '8px 16px', borderRadius: '12px', display: 'flex', alignItems: 'center', gap: '10px', color: '#3B5233', fontWeight: 800, fontSize: '0.7rem', border: '1px solid #E9EEE8' }}>
-                <ShieldCheck size={18} /> 1-YEAR WARRANTY
+            <div style={{ fontSize: '2rem', fontWeight: 900, color: '#1A1A1A', marginBottom: '30px' }}>
+               {product.price}
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '35px', flexWrap: 'wrap' }}>
+              <div style={{ backgroundColor: '#F0F4EF', padding: '10px 16px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#3B5233', fontWeight: 800, fontSize: '0.75rem' }}>
+                <ShieldCheck size={16} /> 1-YEAR WARRANTY
+              </div>
+              <div style={{ backgroundColor: '#F9F9F9', border: '1px solid #eee', padding: '10px 16px', borderRadius: '100px', display: 'flex', alignItems: 'center', gap: '8px', color: '#666', fontWeight: 800, fontSize: '0.75rem' }}>
+                <Package size={16} /> FREE SHIPPING
               </div>
             </div>
 
@@ -174,38 +191,44 @@ const ProductDetail = () => {
               href={product.amazonLink} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="btn btn-primary"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, backgroundColor: '#2a3a24' }}
               whileTap={{ scale: 0.98 }}
               style={{ 
-                width: '100%', 
-                padding: 'clamp(16px, 3vw, 24px)', 
-                fontSize: 'clamp(0.9rem, 2vw, 1.1rem)', 
-                borderRadius: '20px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '16px 32px', 
+                fontSize: '0.9rem',
+                fontWeight: 800, 
+                borderRadius: '100px',
                 backgroundColor: '#3B5233',
-                color: 'white'
+                color: 'white',
+                textDecoration: 'none',
+                boxShadow: '0 15px 30px rgba(59, 82, 51, 0.2)',
+                transition: 'background-color 0.3s ease',
+                alignSelf: 'flex-start'
               }}
             >
-              PURCHASE ON AMAZON <ShoppingCart size={22} style={{ marginLeft: '12px' }} />
+              PURCHASE ON AMAZON <ShoppingCart size={18} style={{ marginLeft: '12px' }} />
             </motion.a>
 
-            <div style={{ marginTop: 'clamp(30px, 6vw, 50px)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(15px, 4vw, 30px)' }}>
-               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                  <div style={{ backgroundColor: '#F0F4EF', padding: '10px', borderRadius: '10px' }}>
-                    <Zap size={18} color="#3B5233" />
+            <div style={{ marginTop: '40px', paddingTop: '40px', borderTop: '1px solid #eee', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+               <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
+                  <div style={{ backgroundColor: '#F0F4EF', padding: '12px', borderRadius: '14px' }}>
+                    <Zap size={20} color="#3B5233" />
                   </div>
                   <div>
-                    <span style={{ fontWeight: 800, fontSize: '0.75rem', display: 'block', color: '#1A1A1A' }}>Conductivity</span>
-                    <span style={{ fontSize: '0.7rem', color: '#888' }}>10% Silver Matrix</span>
+                    <span style={{ fontWeight: 800, fontSize: '0.85rem', display: 'block', color: '#1A1A1A', marginBottom: '4px' }}>Conductivity</span>
+                    <span style={{ fontSize: '0.8rem', color: '#888', lineHeight: 1.4, display: 'block' }}>10% Silver Matrix</span>
                   </div>
                </div>
-               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                  <div style={{ backgroundColor: '#F0F4EF', padding: '10px', borderRadius: '10px' }}>
-                    <RefreshCw size={18} color="#3B5233" />
+               <div style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
+                  <div style={{ backgroundColor: '#F0F4EF', padding: '12px', borderRadius: '14px' }}>
+                    <RefreshCw size={20} color="#3B5233" />
                   </div>
                   <div>
-                    <span style={{ fontWeight: 800, fontSize: '0.75rem', display: 'block', color: '#1A1A1A' }}>Material</span>
-                    <span style={{ fontSize: '0.7rem', color: '#888' }}>Cotton Blend</span>
+                    <span style={{ fontWeight: 800, fontSize: '0.85rem', display: 'block', color: '#1A1A1A', marginBottom: '4px' }}>Material</span>
+                    <span style={{ fontSize: '0.8rem', color: '#888', lineHeight: 1.4, display: 'block' }}>Premium Cotton</span>
                   </div>
                </div>
             </div>
