@@ -4,9 +4,9 @@ import { Sparkles, Heart, Shield, Zap } from 'lucide-react';
 
 const WellnessShowcase = () => {
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '80px', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
           
           <motion.div
             initial={{ opacity: 0, x: -50 }}

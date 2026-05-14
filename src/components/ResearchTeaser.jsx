@@ -5,7 +5,7 @@ import { BookOpen, ArrowRight } from 'lucide-react';
 
 const ResearchTeaser = () => {
   return (
-    <section style={{ padding: '100px 24px', backgroundColor: '#F6F6F6', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ padding: 'clamp(50px, 5vw, 70px) 24px', backgroundColor: '#F6F6F6', position: 'relative', overflow: 'hidden' }}>
       {/* Decorative Background Element */}
       <div style={{ position: 'absolute', top: '-100px', left: '-100px', width: '400px', height: '400px', backgroundColor: '#EEF2ED', borderRadius: '50%', filter: 'blur(100px)', opacity: 0.5 }} />
 

@@ -65,13 +65,13 @@ const FAQItem = ({ question, answer }) => {
 
 const FAQ = ({ items, title = "Frequently Asked Questions" }) => {
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: '#FDFDFD' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#FDFDFD' }}>
       <div style={{ maxWidth: '900px', margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ textAlign: 'center', marginBottom: '60px' }}
+          style={{ textAlign: 'center', marginBottom: 'clamp(25px, 3vw, 40px)' }}
         >
           <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#3B5233', display: 'block', marginBottom: '20px' }}>Common Queries</span>
           <h2 style={{ fontSize: '3rem', fontWeight: 900, color: '#1A1A1A' }}>{title}</h2>

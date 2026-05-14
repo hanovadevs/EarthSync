@@ -4,10 +4,10 @@ import { Award, Globe, Heart, ShieldCheck } from 'lucide-react';
 
 const HomeAbout = () => {
   return (
-    <section style={{ backgroundColor: '#F9F9F9', padding: '120px 24px' }}>
+    <section style={{ backgroundColor: '#F9F9F9', padding: 'clamp(60px, 5vw, 80px) 24px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Story Section */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px', alignItems: 'center', marginBottom: '120px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center', marginBottom: 'clamp(40px, 4vw, 80px)' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const HomeAbout = () => {
         </div>
 
         {/* Values Section */}
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(25px, 3vw, 40px)' }}>
           <h2 style={{ fontSize: '2.5rem', fontWeight: 900 }}>What Drives Us</h2>
         </div>
 

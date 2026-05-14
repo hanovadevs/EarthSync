@@ -8,8 +8,8 @@ const CinematicContent = () => {
     <div style={{ backgroundColor: '#FDFDFD' }}>
       
       {/* 1. The Silver Matrix Section */}
-      <section style={{ padding: '120px 24px', overflow: 'hidden' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '80px', alignItems: 'center' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +83,7 @@ const CinematicContent = () => {
       </section>
 
       {/* 3. Global Movement / Wellness Lifestyle */}
-      <section style={{ padding: '120px 24px', textAlign: 'center', backgroundColor: '#F0F4EF' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', textAlign: 'center', backgroundColor: '#F0F4EF' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -121,7 +121,7 @@ const CinematicContent = () => {
       </section>
 
       {/* 4. The Collection Hub (Link Section) */}
-      <section style={{ padding: '150px 24px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: 'clamp(80px, 6vw, 100px) 24px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: -1 }}>
           <img 
             src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=1460" 

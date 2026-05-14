@@ -5,59 +5,51 @@ import { Star, CheckCircle, Quote } from 'lucide-react';
 const reviews = [
   {
     id: 1,
-    name: "Sarah Mitchell",
+    name: "Christine",
     tag: "Verified Amazon Purchase",
     rating: 5,
-    text: "I've suffered from chronic inflammation for years. After just three nights on the EarthSync sheet, I woke up without that familiar stiffness. It's like my body finally remembered how to rest.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
-  },
-  {
-    id: 2,
-    name: "David Chen",
-    tag: "Verified Buyer",
-    rating: 5,
-    text: "The quality of the silver weave is exceptional. I tested it with a multimeter and the conductivity is perfect. My sleep tracking app shows 20% more deep sleep since I started grounding.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
-  },
-  {
-    id: 3,
-    name: "Elena Rodriguez",
-    tag: "Verified Amazon Purchase",
-    rating: 5,
-    text: "As a fitness coach, recovery is everything. These sheets have become my secret weapon. Muscle soreness is significantly reduced, and I feel much more balanced throughout the day.",
+    text: "This sheet is great! I have been dealing with sleeping issues for a few years, this sheet really helps me fall asleep.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150"
   },
   {
-    id: 4,
-    name: "James Thompson",
-    tag: "Verified Buyer",
+    id: 2,
+    name: "Teresa Monzon",
+    tag: "Verified Amazon Purchase",
     rating: 5,
-    text: "Finally, a grounding product that feels like premium bedding. Most sheets are scratchy, but EarthSync is incredibly soft. It’s a luxury experience with clinical-grade results.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
+    text: "My sleep quality improve and my body feels better when it touches my skin.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+  },
+  {
+    id: 3,
+    name: "Becky",
+    tag: "Verified Amazon Purchase",
+    rating: 4,
+    text: "May take awhile before I can say that I have any results! The sheet was longer than my queen size mattress, but I still made it work.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+  },
+  {
+    id: 4,
+    name: "alyce Head",
+    tag: "Verified Amazon Purchase",
+    rating: 3,
+    text: "Be careful of using it if you have ANY kind of a heart problem. I found out I can’t use it!",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150"
   },
   {
     id: 5,
-    name: "Dr. Michael Kareem",
-    tag: "Scientific Advisor",
-    rating: 5,
-    text: "The data doesn't lie. I've recommended EarthSync to several clients looking to normalize their cortisol levels naturally. The safety resistor in the cord is a crucial touch.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
-  },
-  {
-    id: 6,
-    name: "Linda Wu",
+    name: "Rose Annabelli",
     tag: "Verified Amazon Purchase",
-    rating: 4,
-    text: "I was a skeptic at first, but the 'tingle' you feel when you first touch the sheet is real. My anxiety has definitely leveled off. Best investment I've made for my health this year.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150"
+    rating: 1,
+    text: "Horrible. It makes my hair dry, frizzy. I was told by seller to return this for refund but that is not an option here supplier said to return for refund but I cannot get label through Amazon because it’s past the window of return. Seller has to send a return label.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
   }
 ];
 
 const Reviews = () => {
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(30px, 4vw, 50px)' }}>
           <motion.span 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

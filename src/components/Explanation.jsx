@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Explanation = () => {
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: 'white', overflow: 'hidden' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: 'white', overflow: 'hidden' }}>
       <div className="container">
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '80px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'clamp(30px, 4vw, 50px)' }}>
           
           {/* Image Side */}
           <div style={{ flex: '1 1 clamp(280px, 100%, 500px)', position: 'relative' }}>

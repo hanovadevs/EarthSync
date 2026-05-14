@@ -22,9 +22,9 @@ const Benefits = () => {
   ];
 
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: '#F8F9F8' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#F8F9F8' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(30px, 4vw, 50px)' }}>
           <span style={{ fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.4em', color: '#3B5233', fontWeight: 700 }}>Why Grounding?</span>
           <h2 style={{ fontSize: '3rem', fontWeight: 900, marginTop: '20px', color: '#1A1A1A' }}>Science Meets Serenity</h2>
         </div>

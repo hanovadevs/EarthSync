@@ -17,11 +17,11 @@ const HomeScienceDetails = () => {
   ];
 
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         {/* Core Science Section */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px', alignItems: 'center', marginBottom: '160px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center', marginBottom: 'clamp(60px, 5vw, 100px)' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const HomeScienceDetails = () => {
         </div>
 
         {/* Technical Architecture Flip Card */}
-        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(25px, 3vw, 40px)' }}>
           <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5em', color: '#3B5233', display: 'block', marginBottom: '20px' }}>Technical Architecture</span>
           <h2 style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.02em' }}>Why It Works</h2>
         </div>

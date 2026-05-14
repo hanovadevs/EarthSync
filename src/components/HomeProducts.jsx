@@ -11,9 +11,9 @@ const HomeProducts = () => {
   const featuredProducts = productsData.slice(0, 4);
 
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: '#FDFDFD' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#FDFDFD' }}>
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(30px, 4vw, 50px)' }}>
           <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5em', color: '#3B5233', display: 'block', marginBottom: '20px' }}>Our Collection</span>
           <h2 style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.02em', marginBottom: '20px' }}>Products</h2>
           <p style={{ color: '#666', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>

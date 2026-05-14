@@ -74,8 +74,8 @@ const About = () => {
       </header>
 
       {/* Story Section */}
-      <section style={{ padding: '120px 24px', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px', alignItems: 'center' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -115,9 +115,9 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section style={{ padding: '120px 24px', backgroundColor: '#F9F9F9' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#F9F9F9' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(30px, 4vw, 50px)' }}>
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -153,8 +153,8 @@ const About = () => {
       </section>
 
       {/* Craftsmanship Section */}
-      <section style={{ padding: '120px 24px', overflow: 'hidden' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '100px', alignItems: 'center' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', overflow: 'hidden' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 'clamp(40px, 5vw, 60px)', alignItems: 'center' }}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -190,7 +190,7 @@ const About = () => {
       </section>
 
       {/* The "Why" Section */}
-      <section style={{ padding: '120px 24px', backgroundColor: '#3B5233', color: 'white', textAlign: 'center' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#3B5233', color: 'white', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <Zap size={48} color="#A3B18A" style={{ marginBottom: '30px' }} />
           <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '30px' }}>The Modern Disconnect</h2>

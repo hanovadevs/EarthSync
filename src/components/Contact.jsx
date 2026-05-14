@@ -83,8 +83,8 @@ const Contact = () => {
         </div>
       </header>
 
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '100px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '100px' }}>
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: 'clamp(50px, 5vw, 70px) 24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(40px, 5vw, 60px)' }}>
 
           {/* Info Side */}
           <motion.div
@@ -94,7 +94,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#3B5233', display: 'block', marginBottom: '30px' }}>Contact Details</span>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '60px', lineHeight: 1.1 }}>Reach out to our <br /> rest experts.</h2>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: 'clamp(25px, 3vw, 40px)', lineHeight: 1.1 }}>Reach out to our <br /> rest experts.</h2>
 
             <a href="mailto:service@earthsyncessential.com" style={contactItemStyle} className="contact-hover">
               <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#E9EDE7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -272,7 +272,7 @@ const Contact = () => {
       <FAQ items={contactFAQs} title="Support FAQ" />
 
       {/* Footer Copy */}
-      <footer style={{ padding: '80px 24px', borderTop: '1px solid #eee', textAlign: 'center' }}>
+      <footer style={{ padding: 'clamp(40px, 4vw, 60px) 24px', borderTop: '1px solid #eee', textAlign: 'center' }}>
         <img src="/assets/logo-1.png" alt="EarthSync" style={{ height: '40px', marginBottom: '20px', opacity: 0.5 }} />
         <p style={{ fontSize: '0.8rem', opacity: 0.4 }}>© 2026 EarthSync Essentials. All rights reserved.</p>
       </footer>

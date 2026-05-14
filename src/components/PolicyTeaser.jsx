@@ -13,7 +13,7 @@ const PolicyTeaser = () => {
   ];
 
   return (
-    <section style={{ padding: '100px 24px', backgroundColor: '#F9F9F9', borderTop: '1px solid #eee' }}>
+    <section style={{ padding: 'clamp(50px, 5vw, 70px) 24px', backgroundColor: '#F9F9F9', borderTop: '1px solid #eee' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center' }}>
         
         <motion.div

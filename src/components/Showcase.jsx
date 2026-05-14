@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const Showcase = () => {
   return (
-    <section style={{ padding: '120px 24px', backgroundColor: 'white' }}>
+    <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: 'white' }}>
       <div className="container">
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '80px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 'clamp(30px, 4vw, 50px)' }}>
           <div style={{ flex: '1 1 clamp(280px, 100%, 450px)' }}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}

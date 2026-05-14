@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ShoppingCart, ShieldCheck, Zap, Package, Info, CheckCircle2, AlertCircle, RefreshCw, ChevronRight, Play } from 'lucide-react';
 import { productsData } from '../data/products';
+import Reviews from './Reviews';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -219,7 +220,7 @@ const ProductDetail = () => {
           paddingTop: 'clamp(40px, 8vw, 60px)' 
         }}>
           <div>
-            <section style={{ marginBottom: '60px' }}>
+            <section style={{ marginBottom: 'clamp(25px, 3vw, 40px)' }}>
               <h2 style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '20px' }}>Product Overview</h2>
               <p style={{ fontSize: '1.05rem', color: '#444', lineHeight: 1.7, marginBottom: '30px' }}>
                 {product.description}
@@ -233,7 +234,7 @@ const ProductDetail = () => {
                 ))}
               </div>
             </section>
-            <section style={{ marginBottom: '60px' }}>
+            <section style={{ marginBottom: 'clamp(25px, 3vw, 40px)' }}>
               <h2 style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '20px' }}>Setup Instructions</h2>
               <div style={{ display: 'grid', gap: '15px' }}>
                 {product.setup.map((s, i) => (
@@ -275,7 +276,9 @@ const ProductDetail = () => {
         </div>
       </main>
 
-      <footer style={{ padding: '80px 24px', backgroundColor: '#F9F9F9', textAlign: 'center' }}>
+      <Reviews />
+
+      <footer style={{ padding: 'clamp(40px, 4vw, 60px) 24px', backgroundColor: '#F9F9F9', textAlign: 'center' }}>
           <img src="/assets/logo-1.png" alt="Logo" style={{ height: '35px', marginBottom: '25px' }} />
           <p style={{ color: '#999', fontSize: '0.7rem', letterSpacing: '0.2em' }}>EARTHSYNC ESSENTIALS — DESIGNED IN THE USA</p>
       </footer>

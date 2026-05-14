@@ -95,9 +95,9 @@ const Science = () => {
       </header>
 
       {/* REFINED: WHY IT WORKS FLIP CARD SECTION */}
-      <section style={{ padding: '150px 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
+      <section style={{ padding: 'clamp(80px, 6vw, 100px) 24px', backgroundColor: '#FDFDFD', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(30px, 4vw, 50px)' }}>
              <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5em', color: '#3B5233', display: 'block', marginBottom: '20px' }}>Technical Architecture</span>
              <h2 style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.02em' }}>Why It Works</h2>
           </div>
@@ -191,8 +191,8 @@ const Science = () => {
       <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 100px' }}>
         
         {/* Section 1: The Core Science */}
-        <section style={{ marginBottom: '160px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px', alignItems: 'center' }}>
+        <section style={{ marginBottom: 'clamp(60px, 5vw, 100px)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
             <motion.div {...fadeIn}>
               <span style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.4em', color: '#3B5233', display: 'block', marginBottom: '20px' }}>Biological Synchronization</span>
               <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '30px', lineHeight: 1.1 }}>What happens when you touch the Earth?</h2>
@@ -217,7 +217,7 @@ const Science = () => {
         </section>
 
         {/* Ritual Transition (Image 2 Influence) */}
-        <section style={{ height: '75vh', position: 'relative', marginBottom: '160px', borderRadius: '60px', overflow: 'hidden', boxShadow: '0 50px 100px rgba(0,0,0,0.1)' }}>
+        <section style={{ height: '75vh', position: 'relative', marginBottom: 'clamp(60px, 5vw, 100px)', borderRadius: '60px', overflow: 'hidden', boxShadow: '0 50px 100px rgba(0,0,0,0.1)' }}>
           <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=1460" alt="Morning ritual" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(255,255,255,0.95) 40%, transparent)' }} />
           <div style={{ position: 'absolute', inset: 0, padding: '8% 10%', display: 'flex', flexDirection: 'column', justifyContent: 'center', maxWidth: '800px' }}>
@@ -243,7 +243,7 @@ const Science = () => {
 
       {/* Footer Persistence */}
       <div style={{ borderTop: '1px solid #eee' }}>
-         <footer style={{ padding: '120px 24px', backgroundColor: '#1A1A1A', color: 'white', textAlign: 'center' }}>
+         <footer style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#1A1A1A', color: 'white', textAlign: 'center' }}>
             <img src="/assets/logo-1.png" alt="Logo" style={{ height: '40px', marginBottom: '30px', filter: 'brightness(0) invert(1)' }} />
             <h3 style={{ fontSize: '2.5rem', fontWeight: 900, marginBottom: '30px', letterSpacing: '-0.02em' }}>Ready to Experience the Science?</h3>
             <Link to="/products" className="btn btn-primary" style={{ textDecoration: 'none', padding: '20px 50px' }}>Shop the Collection</Link>

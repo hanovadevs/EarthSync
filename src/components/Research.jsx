@@ -41,9 +41,9 @@ const Research = () => {
       </header>
 
       {/* Chapter 1: The Bio-Electrical Baseline */}
-      <section style={{ padding: '120px 24px', backgroundColor: 'white' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
             <motion.div {...fadeIn}>
               <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#3B5233', textTransform: 'uppercase', letterSpacing: '0.3em', display: 'block', marginBottom: '20px' }}>Biological Foundation</span>
               <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '30px', lineHeight: 1.1 }}>The Earth as an <br /><span style={{ color: '#A3B18A' }}>Electron Reservoir</span></h2>
@@ -134,10 +134,10 @@ const Research = () => {
       </section>
 
       {/* Modern Deficiency Section */}
-      <section style={{ padding: '120px 24px', backgroundColor: 'white' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: 'white' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
           <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '40px' }}>The Electron Deficiency Crisis</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px', marginBottom: '60px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px', marginBottom: 'clamp(25px, 3vw, 40px)' }}>
              {[
                { title: "Insulated Footwear", desc: "Rubber and plastic soles act as electrical insulators, blocking the Earth's natural flow." },
                { title: "Elevated Living", desc: "Modern homes disconnect us from the Earth's surface charge, leaving us 'electron-starved'." },
@@ -156,9 +156,9 @@ const Research = () => {
       </section>
 
       {/* Chapter: The Pioneer */}
-      <section style={{ padding: '120px 24px', backgroundColor: '#F9F9F9' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#F9F9F9' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '80px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
             <motion.div {...fadeIn}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
                  <History size={24} color="#3B5233" />
@@ -184,9 +184,9 @@ const Research = () => {
       </section>
 
       {/* The Human Archive: Real-World Evidence */}
-      <section style={{ padding: '120px 24px', backgroundColor: '#F9F9F9' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#F9F9F9' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(30px, 4vw, 50px)' }}>
             <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#3B5233', textTransform: 'uppercase', letterSpacing: '0.4em', display: 'block', marginBottom: '15px' }}>Field Observations</span>
             <h2 style={{ fontSize: '3.5rem', fontWeight: 900, letterSpacing: '-0.02em' }}>The Human Archive</h2>
             <p style={{ fontSize: '1.1rem', color: '#666', fontWeight: 300 }}>Synthesizing real-world outcomes from thousands of active grounding practitioners.</p>
@@ -243,9 +243,9 @@ const Research = () => {
       </section>
 
       {/* Critical Precautions */}
-      <section style={{ padding: '120px 24px', backgroundColor: '#FFF9F9' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', backgroundColor: '#FFF9F9' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '80px', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 'clamp(30px, 4vw, 50px)', alignItems: 'center' }}>
             <motion.div {...fadeIn}>
               <div style={{ backgroundColor: '#D64545', color: 'white', display: 'inline-flex', padding: '12px 24px', borderRadius: '100px', gap: '10px', alignItems: 'center', marginBottom: '30px' }}>
                  <ShieldAlert size={20} />
@@ -277,7 +277,7 @@ const Research = () => {
       </section>
 
       {/* CTA Footer */}
-      <section style={{ padding: '120px 24px', textAlign: 'center', backgroundColor: '#1A1A1A', color: 'white' }}>
+      <section style={{ padding: 'clamp(60px, 5vw, 80px) 24px', textAlign: 'center', backgroundColor: '#1A1A1A', color: 'white' }}>
          <FlaskConical size={50} color="#A3B18A" style={{ marginBottom: '30px' }} />
          <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '30px' }}>Ready to Apply the Research?</h2>
          <Link to="/products" style={{ display: 'inline-flex', alignItems: 'center', gap: '15px', backgroundColor: '#3B5233', color: 'white', padding: '22px 50px', borderRadius: '100px', textDecoration: 'none', fontWeight: 900, fontSize: '1.1rem' }}>
