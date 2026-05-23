@@ -27,6 +27,10 @@ import ResearchTeaser from './components/ResearchTeaser'
 import HomeAbout from './components/HomeAbout'
 import HomeScienceDetails from './components/HomeScienceDetails'
 import HomeProducts from './components/HomeProducts'
+import GroundingProcess from './components/GroundingProcess'
+import NaturalDefense from './components/NaturalDefense'
+import GroundingLifestyle from './components/GroundingLifestyle'
+import SafetyPrecautions from './components/SafetyPrecautions'
 
 const homeFAQs = [
   {
@@ -67,16 +71,20 @@ const Home = () => (
   <>
     <Hero />
     <Explanation />
+    <GroundingProcess />
     <HomeScienceDetails />
     <HomeProducts />
     <Benefits />
+    <NaturalDefense />
     <Reviews />
     <CinematicContent />
     <WellnessShowcase />
+    <GroundingLifestyle />
     <HomeAbout />
     <ResearchTeaser />
     <Showcase />
     <WarrantyTeaser />
+    <SafetyPrecautions />
     <PolicyTeaser />
     <FAQ items={homeFAQs} />
   </>

@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, Zap, Shield, Sparkles, Beaker, Activity, Info, RotateCcw } from 'lucide-react';
 import FAQ from './FAQ';
 import WellnessShowcase from './WellnessShowcase';
+import GroundingProcess from './GroundingProcess';
+import NaturalDefense from './NaturalDefense';
+import GroundingLifestyle from './GroundingLifestyle';
+import SafetyPrecautions from './SafetyPrecautions';
 
 const scienceFAQs = [
   {
@@ -238,6 +242,14 @@ const Science = () => {
       </div>
 
       <WellnessShowcase />
+
+      <GroundingProcess />
+
+      <NaturalDefense />
+
+      <GroundingLifestyle />
+
+      <SafetyPrecautions />
 
       <FAQ items={scienceFAQs} title="Science FAQ" />
 
