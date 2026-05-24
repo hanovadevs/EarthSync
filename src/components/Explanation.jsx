@@ -44,7 +44,7 @@ const Explanation = () => {
             >
               <h4 style={{ fontSize: '1.2rem', marginBottom: '15px' }}>Bio-Electrical Balance</h4>
               <p style={{ fontSize: '0.8rem', opacity: 0.8, lineHeight: 1.6 }}>
-                Your body is electrical. Grounding allows a transfer of electrons from the Earth to you.
+                Your body uses natural electrical signals. Grounding connects you to the Earth’s surface electrons through conductive contact.
               </p>
             </motion.div>
           </div>
@@ -88,7 +88,7 @@ const Explanation = () => {
                 marginBottom: '30px', 
                 fontWeight: 300 
               }}>
-                Grounding (or earthing) is the simple practice of connecting your body to the Earth's natural surface charge. 
+                Grounding, also known as earthing, is the practice of reconnecting with the Earth’s natural electrical energy.
               </p>
               
               <p style={{ 
@@ -97,7 +97,7 @@ const Explanation = () => {
                 lineHeight: 1.8, 
                 fontWeight: 300 
               }}>
-                Modern life isolates us from this vital energy. By using conductive silver-infused sheets, we create a bridge that allows the Earth's free electrons to flow into your body, neutralizing stress and restoring your natural biological state while you sleep.
+                In today’s modern world, we spend less time in direct contact with nature. Our conductive silver-infused grounding sheets are thoughtfully designed to reconnect you to the Earth through grounding technology, helping promote relaxation, comfort, and a more balanced sleep experience.
               </p>
 
               <Link to="/science" style={{ textDecoration: 'none' }}>
