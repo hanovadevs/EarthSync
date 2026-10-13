@@ -15,9 +15,10 @@ Additional context about EarthSync Essentials and our products:
   * "Products" to browse the collection (Sheets, Mats, Accessories).
   * "Science" for detailed clinical studies, EMF explanations, and the biology of earthing.
   * "About Us" to learn about our mission and sustainable organic cotton practices.
+  * "Blog" / "Journal" for HanovaDevs engineering insights, custom software development, client reviews, support standards, and digital products like Eunoia.
   * "Contact" to reach our team directly.
   * "Policies" for shipping and returns info.
-- Our website is www.earthsyncessential.com.`;
+- Our website is www.earthsyncessential.com. Built and backed by HanovaDevs (founded by Ali Haider and co-founded by Hira Maqsood).`;
 
 // Simple in-memory rate limiter for serverless
 const rateLimitMap = new Map();

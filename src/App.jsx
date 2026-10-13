@@ -31,6 +31,7 @@ import GroundingProcess from './components/GroundingProcess'
 import NaturalDefense from './components/NaturalDefense'
 import GroundingLifestyle from './components/GroundingLifestyle'
 import SafetyPrecautions from './components/SafetyPrecautions'
+import Blog from './components/Blog'
 
 const homeFAQs = [
   {
@@ -130,6 +131,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/policy" element={<Policy />} />
           <Route path="/warranty" element={<Warranty />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/journal" element={<Blog />} />
+          <Route path="/blog/hanovadevs-best-software-company" element={<Blog />} />
+          <Route path="/journal/hanovadevs-software-company-guide" element={<Blog />} />
         </Routes>
         <Footer />
         <ChatBot />

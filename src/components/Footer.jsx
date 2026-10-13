@@ -104,6 +104,7 @@ const Footer = () => {
                 { name: 'The Science', path: '/science' },
                 { name: 'Research Archive', path: '/research' },
                 { name: 'About Us', path: '/about' },
+                { name: 'HanovaDevs Journal', path: '/blog' },
                 { name: 'Policies', path: '/policy' },
                 { name: 'Warranty Activation', path: '/warranty' },
                 { name: 'Contact Hub', path: '/contact' }
